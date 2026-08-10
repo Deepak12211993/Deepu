@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise for Pooja 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f6, #ffe1eb, #fff8fb);
+  color: #5b3042;
+  overflow: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 92%;
+  max-width: 520px;
+  padding: 30px 22px;
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(190,70,110,0.2);
+}
+
+.panda {
+  font-size: 100px;
+  line-height: 1;
+}
+
+.rose {
+  font-size: 55px;
+  margin-top: -15px;
+}
+
+h1 {
+  color: #d94b78;
+  font-size: 28px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  padding: 15px 28px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.continue,
+.yes {
+  background: #ef5d8b;
+  color: white;
+  box-shadow: 0 8px 20px rgba(239,93,139,.3);
+}
+
+.hidden {
+  display: none;
+}
+
+.buttons {
+  height: 170px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.yes {
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  transform: translateX(-110%);
+}
+
+.no {
+  position: absolute;
+  left: 50%;
+  top: 45px;
+  transform: translateX(10%);
+  background: #eeeeee;
+  color: #777;
+}
+
+.success {
+  color: #d94b78;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  transition: all 1.5s ease;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<!-- FIRST SCREEN -->
+
+<div id="welcome">
+
+  <div class="panda">🐼</div>
+  <div class="rose">🌹</div>
+
+  <h1>Hi Pooja 💗</h1>
+
+  <p>
+    I have a little surprise for you...
+  </p>
+
+  <button class="continue" onclick="showProposal()">
+    Continue 💕
+  </button>
+
+</div>
+
+<!-- PROPOSAL SCREEN -->
+
+<div id="proposal" class="hidden">
+
+  <div style="font-size:45px;">✨🐼🌹✨</div>
+
+  <h1>
+    Pooja, you make my world sweeter. 💕
+  </h1>
+
+  <p>
+    Every smile of yours makes my day brighter,
+    and every moment with you feels a little more special.
+  </p>
+
+  <p>
+    <strong>
+      So I have one very important question...
+    </strong>
+  </p>
+
+  <h1>
+    Will you marry me? 💍❤️
+  </h1>
+
+  <div class="buttons" id="buttons">
+
+```
+<button class="yes" onclick="sayYes()">
+  Yes! 💖
+</button>
+
+<button class="no" id="noButton">
+  No 😜
+</button>
+```
+
+  </div>
+
+  <p style="font-size:13px;color:#a66b80;">
+    P.S. The No button is a little shy 😄
+  </p>
+
+</div>
+
+<!-- SUCCESS SCREEN -->
+
+<div id="success" class="hidden">
+
+  <div style="font-size:45px;">
+    💖💍🎉
+  </div>
+
+  <div class="panda">🐼</div>
+
+  <div class="success">
+    YAY! You said YES! 🥹❤️
+  </div>
+
+  <p>
+    Pooja, you just made me the happiest person ever.
+  </p>
+
+  <p>
+    Now come here, future wife. 🌹💕
+  </p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+function showProposal() {
+
+  document.getElementById("welcome").classList.add("hidden");
+
+  document.getElementById("proposal").classList.remove("hidden");
+
+}
+
+
+/* PLAYFUL NO BUTTON */
+
+const noButton = document.getElementById("noButton");
+
+function escapeNo() {
+
+  const area = document.getElementById("buttons");
+
+  const maxX = area.clientWidth - noButton.offsetWidth;
+
+  const maxY = area.clientHeight - noButton.offsetHeight;
+
+  const x = Math.random() * Math.max(maxX, 10);
+
+  const y = Math.random() * Math.max(maxY, 10);
+
+  noButton.style.left = x + "px";
+
+  noButton.style.top = y + "px";
+
+  noButton.style.transform = "none";
+}
+
+
+/* Desktop */
+noButton.addEventListener("mouseenter", escapeNo);
+
+/* Mobile */
+noButton.addEventListener("touchstart", function(event) {
+  event.preventDefault();
+  escapeNo();
+}, {passive:false});
+
+/* If keyboard focuses it */
+noButton.addEventListener("focus", escapeNo);
+
+
+/* YES */
+
+function sayYes() {
+
+  document.getElementById("proposal").classList.add("hidden");
+
+  document.getElementById("success").classList.remove("hidden");
+
+  celebration();
+
+}
+
+
+/* CELEBRATION */
+
+function celebration() {
+
+  const emojis = ["💖","💕","✨","🌹","💍","🎉"];
+
+  for (let i = 0; i < 60; i++) {
+
+    const item = document.createElement("div");
+
+    item.className = "confetti";
+
+    item.innerHTML =
+      emojis[Math.floor(Math.random() * emojis.length)];
+
+    item.style.left = "50vw";
+
+    item.style.top = "45vh";
+
+    item.style.fontSize =
+      (18 + Math.random() * 22) + "px";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+
+      item.style.transform =
+        "translate(" +
+        ((Math.random() - 0.5) * 600) +
+        "px," +
+        ((Math.random() - 0.5) * 600) +
+        "px) rotate(" +
+        (Math.random() * 720) +
+        "deg)";
+
+      item.style.opacity = "0";
+
+    }, 50);
+
+    setTimeout(() => {
+      item.remove();
+    }, 1700);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
