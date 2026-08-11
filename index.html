@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +13,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -23,6 +25,7 @@
     body {
       min-height: 100vh;
       overflow: hidden;
+
       background:
         radial-gradient(circle at top left, #ffd6e5 0%, transparent 35%),
         radial-gradient(circle at bottom right, #ffc2d8 0%, transparent 35%),
@@ -31,15 +34,21 @@
       color: #5d3042;
     }
 
-    /* Floating hearts */
+    /* ================================
+       FLOATING HEARTS
+    ================================ */
 
     .heart {
       position: fixed;
       bottom: -40px;
+
       color: #ff7da7;
       font-size: 20px;
+
       pointer-events: none;
+
       animation: floatHeart linear infinite;
+
       opacity: 0.7;
       z-index: 0;
     }
@@ -60,22 +69,27 @@
       }
     }
 
-    /* Main */
+    /* ================================
+       MAIN PAGE
+    ================================ */
 
     .page {
       min-height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       padding: 20px;
+
       position: relative;
       z-index: 1;
     }
 
     .card {
       width: 100%;
-      max-width: 520px;
-      min-height: 520px;
+      max-width: 560px;
+      min-height: 560px;
 
       display: flex;
       align-items: center;
@@ -85,15 +99,19 @@
 
       text-align: center;
 
-      background: rgba(255,255,255,0.90);
+      background: rgba(255, 255, 255, 0.92);
+
       backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
 
       border-radius: 32px;
 
-      border: 2px solid rgba(255,255,255,0.8);
+      border: 2px solid rgba(255, 255, 255, 0.8);
 
       box-shadow:
         0 25px 70px rgba(194, 68, 110, 0.20);
+
+      overflow: hidden;
     }
 
     .screen {
@@ -104,18 +122,22 @@
       display: none !important;
     }
 
-    /* Panda */
+    /* ================================
+       PANDA
+    ================================ */
 
     .panda {
       font-size: 105px;
       line-height: 1;
+
       margin-bottom: 5px;
 
       animation: pandaBounce 2s ease-in-out infinite;
     }
 
     @keyframes pandaBounce {
-      0%, 100% {
+      0%,
+      100% {
         transform: translateY(0);
       }
 
@@ -124,40 +146,82 @@
       }
     }
 
-    .rose {
-      font-size: 55px;
-      margin-top: -10px;
-      animation: roseFloat 2s ease-in-out infinite;
+    /* Panda holding roses */
+
+    .rose-bucket {
+      position: relative;
+
+      width: 230px;
+      height: 145px;
+
+      margin: 0 auto 5px;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      animation: bucketFloat 2s ease-in-out infinite;
     }
 
-    @keyframes roseFloat {
-      0%, 100% {
-        transform: rotate(-8deg);
+    .rose-bunch {
+      position: absolute;
+
+      top: -10px;
+
+      font-size: 55px;
+
+      letter-spacing: -10px;
+
+      z-index: 2;
+
+      filter: drop-shadow(0 5px 5px rgba(180, 50, 80, 0.15));
+    }
+
+    .bucket {
+      font-size: 75px;
+
+      position: absolute;
+      bottom: 0;
+
+      z-index: 1;
+    }
+
+    @keyframes bucketFloat {
+      0%,
+      100% {
+        transform: rotate(-2deg) translateY(0);
       }
 
       50% {
-        transform: rotate(8deg);
+        transform: rotate(2deg) translateY(-5px);
       }
     }
 
-    /* Text */
+    /* ================================
+       TEXT
+    ================================ */
 
     h1 {
       color: #df4d7c;
+
       font-size: 30px;
       line-height: 1.25;
+
       margin: 18px 0 12px;
     }
 
     h2 {
       color: #df4d7c;
+
       font-size: 25px;
+
       margin: 18px 0;
     }
 
     p {
       font-size: 18px;
       line-height: 1.65;
+
       margin: 12px 0;
     }
 
@@ -166,17 +230,77 @@
       color: #704052;
     }
 
-    .question {
-      margin-top: 25px;
-      font-size: 28px;
-      color: #d83f70;
+    /* ================================
+       SCREEN 2
+    ================================ */
+
+    .fight-emojis {
+      font-size: 48px;
+
+      margin-bottom: 10px;
+
+      animation: fightShake 1.5s ease-in-out infinite;
+    }
+
+    @keyframes fightShake {
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(-5deg);
+      }
+
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    .idiot-title {
+      color: #df3e72;
+
+      font-size: 31px;
+      font-weight: bold;
+
+      margin: 15px 0;
+    }
+
+    .message-box {
+      background: #fff0f5;
+
+      border: 2px dashed #ff91b2;
+
+      border-radius: 22px;
+
+      padding: 18px;
+
+      margin: 20px 0;
+
+      box-shadow:
+        0 8px 20px rgba(223, 62, 114, 0.08);
+    }
+
+    .message-box p {
+      margin: 10px 0;
+    }
+
+    .angry {
+      color: #e34a74;
       font-weight: bold;
     }
 
-    /* Buttons */
+    .cute {
+      color: #7c4859;
+    }
+
+    /* ================================
+       BUTTONS
+    ================================ */
 
     .btn {
       border: none;
+
       border-radius: 999px;
 
       padding: 15px 28px;
@@ -198,11 +322,12 @@
     .continue {
       margin-top: 18px;
 
-      background: linear-gradient(
-        135deg,
-        #ff5f91,
-        #e94278
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #ff5f91,
+          #e94278
+        );
 
       color: white;
 
@@ -210,7 +335,126 @@
         0 10px 25px rgba(224, 65, 113, 0.30);
     }
 
-    /* YES / NO area */
+    /* ================================
+       SCREEN 3
+    ================================ */
+
+    .love-header {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 42px;
+      font-weight: bold;
+
+      font-style: italic;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d92362,
+          #ff5f91,
+          #b71d55
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      margin: 0 0 5px;
+
+      text-shadow:
+        0 5px 20px rgba(223, 62, 114, 0.12);
+
+      animation: loveGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes loveGlow {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+    }
+
+    .love-subtitle {
+      font-size: 15px;
+
+      color: #a66a80;
+
+      margin-bottom: 15px;
+    }
+
+    /* ================================
+       PROPOSAL GIF
+    ================================ */
+
+    .gif-container {
+      width: 100%;
+      max-width: 360px;
+
+      margin: 10px auto 18px;
+
+      padding: 8px;
+
+      background: white;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 12px 30px rgba(190, 58, 100, 0.15);
+
+      overflow: hidden;
+    }
+
+    .gif-container img {
+      display: block;
+
+      width: 100%;
+      max-height: 230px;
+
+      object-fit: cover;
+
+      border-radius: 18px;
+    }
+
+    .gif-caption {
+      font-size: 13px;
+
+      color: #a66a80;
+
+      margin-top: 7px;
+    }
+
+    .last-breath {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 20px;
+
+      font-style: italic;
+
+      color: #6c3b4d;
+
+      line-height: 1.5;
+
+      margin: 15px 0;
+    }
+
+    .question {
+      margin-top: 18px;
+
+      font-size: 28px;
+
+      color: #d83f70;
+
+      font-weight: bold;
+    }
+
+    /* ================================
+       YES / NO AREA
+    ================================ */
 
     .button-area {
       position: relative;
@@ -229,11 +473,12 @@
 
       transform: translateX(-115%);
 
-      background: linear-gradient(
-        135deg,
-        #ff5f91,
-        #df3e72
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #ff5f91,
+          #df3e72
+        );
 
       color: white;
 
@@ -254,16 +499,22 @@
       color: #777;
 
       box-shadow:
-        0 5px 15px rgba(0,0,0,0.08);
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+      z-index: 10;
     }
 
     .hint {
       font-size: 13px;
+
       color: #a66a80;
+
       margin-top: -20px;
     }
 
-    /* Success */
+    /* ================================
+       SUCCESS
+    ================================ */
 
     .success-emoji {
       font-size: 60px;
@@ -273,7 +524,8 @@
     }
 
     @keyframes successBounce {
-      0%,100% {
+      0%,
+      100% {
         transform: scale(1);
       }
 
@@ -284,16 +536,23 @@
 
     .success-title {
       font-size: 34px;
+
       color: #df3e72;
+
       font-weight: bold;
+
+      margin: 15px 0;
     }
 
     .small {
       font-size: 14px;
+
       color: #a66a80;
     }
 
-    /* Confetti */
+    /* ================================
+       CONFETTI
+    ================================ */
 
     .confetti {
       position: fixed;
@@ -312,21 +571,31 @@
         opacity 1.7s ease-out;
     }
 
-    /* Mobile */
+    /* ================================
+       MOBILE
+    ================================ */
 
     @media (max-width: 500px) {
 
+      .page {
+        padding: 12px;
+      }
+
       .card {
-        min-height: 560px;
+        min-height: 580px;
+
         padding: 25px 18px;
+
+        border-radius: 27px;
       }
 
       .panda {
-        font-size: 85px;
+        font-size: 82px;
       }
 
-      .rose {
-        font-size: 45px;
+      .rose-bucket {
+        transform: scale(0.9);
+        margin-top: -5px;
       }
 
       h1 {
@@ -337,516 +606,685 @@
         font-size: 17px;
       }
 
+      .idiot-title {
+        font-size: 27px;
+      }
+
+      .fight-emojis {
+        font-size: 40px;
+      }
+
+      .love-header {
+        font-size: 34px;
+      }
+
       .question {
         font-size: 25px;
       }
 
+      .gif-container {
+        max-width: 300px;
+      }
+
+      .gif-container img {
+        max-height: 190px;
+      }
+
+      .last-breath {
+        font-size: 18px;
+      }
     }
   </style>
-</head>
 
+</head>
 
 <body>
 
   <!-- Floating hearts -->
-  <div id="hearts"></div>
 
+  <div id="hearts"></div>
 
   <div class="page">
 
-    <div class="card">
+```
+<div class="card">
 
+  <!-- =================================
+       SCREEN 1
+  ================================== -->
 
-      <!-- ================================= -->
-      <!-- SCREEN 1 -->
-      <!-- ================================= -->
+  <section id="welcome" class="screen">
 
-      <section id="welcome" class="screen">
+    <!-- Cute panda -->
+    <div class="panda">
+      🐼
+    </div>
 
-        <div class="panda">
-          🐼
-        </div>
+    <!-- Panda's bucket of roses -->
+    <div class="rose-bucket">
 
-        <div class="rose">
-          🌹
-        </div>
+      <div class="rose-bunch">
+        🌹🌹🌹
+      </div>
 
-        <h1>
-          Hi Pooja ❤️
-        </h1>
-
-        <p class="romantic">
-          I have a tiny little surprise
-          especially for you...
-        </p>
-
-        <button
-          class="btn continue"
-          onclick="showProposal()"
-        >
-          Continue 💕
-        </button>
-
-      </section>
-
-
-
-      <!-- ================================= -->
-      <!-- SCREEN 2 -->
-      <!-- ================================= -->
-
-      <section
-        id="proposal"
-        class="screen hidden"
-      >
-
-        <div style="font-size:45px;">
-          ✨ 🐼 🌹 ✨
-        </div>
-
-
-        <h1>
-          Pooja, you are my favorite person. ❤️
-        </h1>
-
-
-        <p class="romantic">
-
-          You are the smile I want to wake up to,
-          the person I want beside me,
-          and the hand I want to hold forever. 🥰
-
-        </p>
-
-
-        <p class="romantic">
-
-          Every moment with you feels a little more
-          special, and I can't imagine my tomorrow
-          without you in it. 💕
-
-        </p>
-
-
-        <p>
-          <strong>
-            So I have one very important question...
-          </strong>
-        </p>
-
-
-        <div class="question">
-
-          Pooja, will you marry me? 💍❤️
-
-        </div>
-
-
-        <!-- YES / NO -->
-
-        <div
-          class="button-area"
-          id="buttonArea"
-        >
-
-          <button
-            class="btn yes"
-            onclick="sayYes()"
-          >
-            Yes! 💖
-          </button>
-
-
-          <button
-            class="btn no"
-            id="noButton"
-          >
-            No 😜
-          </button>
-
-        </div>
-
-
-        <div class="hint">
-
-          P.S. The No button is feeling a little shy. 😄💕
-
-        </div>
-
-      </section>
-
-
-
-      <!-- ================================= -->
-      <!-- SCREEN 3 -->
-      <!-- ================================= -->
-
-      <section
-        id="success"
-        class="screen hidden"
-      >
-
-        <div class="success-emoji">
-          💖💍🎉
-        </div>
-
-
-        <div class="panda">
-          🐼
-        </div>
-
-
-        <div class="success-title">
-
-          YAY! YOU SAID YES! 🥹❤️
-
-        </div>
-
-
-        <p>
-
-          Pooja, you just made me
-          the happiest person in the world. ❤️
-
-        </p>
-
-
-        <p>
-
-          From this moment,
-          let's start writing our forever together. 🌹💕
-
-        </p>
-
-
-        <p>
-
-          I love you! ❤️
-
-        </p>
-
-
-        <div class="small">
-
-          Forever starts here. 💍
-
-        </div>
-
-      </section>
-
+      <div class="bucket">
+        🪣
+      </div>
 
     </div>
 
+    <h1>
+      Hi Pooja ❤️
+    </h1>
+
+    <p class="romantic">
+      This cute panda has brought
+      something special just for you... 🐼🌹
+    </p>
+
+    <p>
+      Please click the button below. 👀💕
+    </p>
+
+    <button
+      class="btn continue"
+      onclick="showProposal()"
+    >
+      Continue 💕
+    </button>
+
+  </section>
+
+
+  <!-- =================================
+       SCREEN 2
+  ================================== -->
+
+  <section
+    id="proposal"
+    class="screen hidden"
+  >
+
+    <div class="fight-emojis">
+      😤🥊🐼💢🥊😤
+    </div>
+
+    <div class="idiot-title">
+      Hey Idiot! 😤❤️
+    </div>
+
+    <div class="message-box">
+
+      <p class="angry">
+        📞 Call maddaga pick madu!
+      </p>
+
+      <p class="cute">
+        Yen call maadidru pickup maadalla? 😑
+      </p>
+
+      <p class="angry">
+        💬 Message maddaga reply madu!
+      </p>
+
+      <p class="cute">
+        Busy idre at least noddaga
+        reply / respond madu! 😤
+      </p>
+
+      <p>
+        😠🥊 Don't make me fight with you!
+        🐼💢
+      </p>
+
+      <p>
+        But still... you're my favorite idiot. 😂❤️
+      </p>
+
+    </div>
+
+    <div style="font-size: 38px;">
+      🥺👉👈 💕
+    </div>
+
+    <button
+      class="btn continue"
+      onclick="showFinalProposal()"
+    >
+      Okay, Next! 😜💕
+    </button>
+
+  </section>
+
+
+  <!-- =================================
+       SCREEN 3
+  ================================== -->
+
+  <section
+    id="finalProposal"
+    class="screen hidden"
+  >
+
+    <!-- Stylish Bengali header -->
+    <div class="love-header">
+      ami tomake bhalobashi ❤️
+    </div>
+
+    <div class="love-subtitle">
+      আমার ভালোবাসা শুধু তোমার জন্য... 🌹
+    </div>
+
+
+    <!-- =================================
+         PROPOSAL GIF
+
+         Replace the src below with
+         your preferred bucket-of-roses /
+         proposal GIF URL.
+    ================================== -->
+
+    <div class="gif-container">
+
+      <img
+        src="YOUR_PROPOSAL_GIF_URL_HERE"
+        alt="Cute bucket of roses proposal"
+      >
+
+      <div class="gif-caption">
+        A little bucket of roses for you... 🌹🪣❤️
+      </div>
+
+    </div>
+
+
+    <p class="last-breath">
+
+      I'll hold your hand
+      until my last breath. ❤️
+
+    </p>
+
+
+    <div class="question">
+
+      Will you marry me? 💍❤️
+
+    </div>
+
+
+    <!-- YES / NO -->
+
+    <div
+      class="button-area"
+      id="buttonArea"
+    >
+
+      <button
+        class="btn yes"
+        onclick="sayYes()"
+      >
+        Yes! 💖
+      </button>
+
+      <button
+        class="btn no"
+        id="noButton"
+        type="button"
+      >
+        No 😜
+      </button>
+
+    </div>
+
+
+    <div class="hint">
+      P.S. The No button is a little shy... 😄💕
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       SCREEN 4 — SUCCESS
+  ================================== -->
+
+  <section
+    id="success"
+    class="screen hidden"
+  >
+
+    <div class="success-emoji">
+      💖💍🎉
+    </div>
+
+    <div class="panda">
+      🐼
+    </div>
+
+    <div class="success-title">
+      YAY! YOU SAID YES! 🥹❤️
+    </div>
+
+    <p>
+      Pooja, you just made me
+      the happiest person in the world. ❤️
+    </p>
+
+    <p>
+      From this moment,
+      let's start writing our
+      forever together. 🌹💕
+    </p>
+
+    <p>
+      I love you! ❤️
+    </p>
+
+    <div class="small">
+      Forever starts here. 💍
+    </div>
+
+  </section>
+
+</div>
+```
+
   </div>
 
+  <script>
 
+    /* ==========================================
+       FLOATING HEARTS
+    ========================================== */
 
-<script>
+    const heartContainer =
+      document.getElementById("hearts");
 
-/* ==========================================
-   FLOATING HEARTS
-========================================== */
-
-const heartContainer =
-  document.getElementById("hearts");
-
-const heartSymbols = [
-  "❤️",
-  "💕",
-  "💗",
-  "💖",
-  "♡"
-];
-
-
-for (let i = 0; i < 20; i++) {
-
-  const heart =
-    document.createElement("div");
-
-  heart.className = "heart";
-
-  heart.innerHTML =
-    heartSymbols[
-      Math.floor(
-        Math.random() * heartSymbols.length
-      )
+    const heartSymbols = [
+      "❤️",
+      "💕",
+      "💗",
+      "💖",
+      "♡"
     ];
 
-  heart.style.left =
-    Math.random() * 100 + "vw";
+    for (let i = 0; i < 20; i++) {
 
-  heart.style.animationDuration =
-    (5 + Math.random() * 6) + "s";
+      const heart =
+        document.createElement("div");
 
-  heart.style.animationDelay =
-    (-Math.random() * 10) + "s";
+      heart.className = "heart";
 
-  heart.style.fontSize =
-    (15 + Math.random() * 20) + "px";
+      heart.innerHTML =
+        heartSymbols[
+          Math.floor(
+            Math.random() * heartSymbols.length
+          )
+        ];
 
-  heartContainer.appendChild(heart);
-}
+      heart.style.left =
+        Math.random() * 100 + "vw";
 
+      heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
 
+      heart.style.animationDelay =
+        (-Math.random() * 10) + "s";
 
-/* ==========================================
-   SCREEN 1 → SCREEN 2
-========================================== */
+      heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
 
-function showProposal() {
-
-  document
-    .getElementById("welcome")
-    .classList.add("hidden");
-
-  document
-    .getElementById("proposal")
-    .classList.remove("hidden");
-
-}
+      heartContainer.appendChild(heart);
+    }
 
 
+    /* ==========================================
+       SCREEN 1 → SCREEN 2
+    ========================================== */
 
-/* ==========================================
-   ESCAPING NO BUTTON
-========================================== */
+    function showProposal() {
 
-const noButton =
-  document.getElementById("noButton");
+      document
+        .getElementById("welcome")
+        .classList.add("hidden");
 
-const buttonArea =
-  document.getElementById("buttonArea");
+      document
+        .getElementById("proposal")
+        .classList.remove("hidden");
 
-
-function moveNoButton() {
-
-  const areaWidth =
-    buttonArea.clientWidth;
-
-  const areaHeight =
-    buttonArea.clientHeight;
-
-  const buttonWidth =
-    noButton.offsetWidth;
-
-  const buttonHeight =
-    noButton.offsetHeight;
+    }
 
 
-  const maxX =
-    Math.max(
-      10,
-      areaWidth - buttonWidth
+    /* ==========================================
+       SCREEN 2 → SCREEN 3
+    ========================================== */
+
+    function showFinalProposal() {
+
+      document
+        .getElementById("proposal")
+        .classList.add("hidden");
+
+      document
+        .getElementById("finalProposal")
+        .classList.remove("hidden");
+
+    }
+
+
+    /* ==========================================
+       ESCAPING NO BUTTON
+    ========================================== */
+
+    const noButton =
+      document.getElementById("noButton");
+
+    const buttonArea =
+      document.getElementById("buttonArea");
+
+
+    function moveNoButton() {
+
+      const areaWidth =
+        buttonArea.clientWidth;
+
+      const areaHeight =
+        buttonArea.clientHeight;
+
+      const buttonWidth =
+        noButton.offsetWidth;
+
+      const buttonHeight =
+        noButton.offsetHeight;
+
+
+      /*
+        Keep the button completely inside
+        the button area.
+      */
+
+      const maxX =
+        Math.max(
+          10,
+          areaWidth - buttonWidth - 10
+        );
+
+      const maxY =
+        Math.max(
+          10,
+          areaHeight - buttonHeight - 10
+        );
+
+
+      const randomX =
+        10 + Math.random() * Math.max(1, maxX - 10);
+
+      const randomY =
+        10 + Math.random() * Math.max(1, maxY - 10);
+
+
+      noButton.style.left =
+        randomX + "px";
+
+      noButton.style.top =
+        randomY + "px";
+
+      noButton.style.transform =
+        "none";
+    }
+
+
+    /* ==========================================
+       DESKTOP
+    ========================================== */
+
+    noButton.addEventListener(
+      "mouseenter",
+      moveNoButton
     );
 
-  const maxY =
-    Math.max(
-      10,
-      areaHeight - buttonHeight
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    noButton.addEventListener(
+      "touchstart",
+      function(event) {
+
+        event.preventDefault();
+
+        moveNoButton();
+
+      },
+      {
+        passive: false
+      }
     );
 
 
-  const randomX =
-    Math.random() * maxX;
+    /*
+      Also escape when the user presses
+      or attempts to click the No button.
+    */
 
-  const randomY =
-    Math.random() * maxY;
+    noButton.addEventListener(
+      "pointerdown",
+      function(event) {
 
+        event.preventDefault();
 
-  noButton.style.left =
-    randomX + "px";
+        moveNoButton();
 
-  noButton.style.top =
-    randomY + "px";
-
-  noButton.style.transform =
-    "none";
-}
-
+      }
+    );
 
 
-/* Desktop */
+    /* ==========================================
+       KEYBOARD FOCUS
+    ========================================== */
 
-noButton.addEventListener(
-  "mouseenter",
-  moveNoButton
-);
-
-
-/* Mobile */
-
-noButton.addEventListener(
-  "touchstart",
-  function(event) {
-
-    event.preventDefault();
-
-    moveNoButton();
-
-  },
-  {
-    passive: false
-  }
-);
+    noButton.addEventListener(
+      "focus",
+      moveNoButton
+    );
 
 
-/* If keyboard focuses */
+    /* ==========================================
+       EXTRA SAFETY:
+       If a click somehow reaches No,
+       immediately move it instead of
+       allowing any action.
+    ========================================== */
 
-noButton.addEventListener(
-  "focus",
-  moveNoButton
-);
+    noButton.addEventListener(
+      "click",
+      function(event) {
 
+        event.preventDefault();
+        event.stopPropagation();
 
+        moveNoButton();
 
-/* ==========================================
-   YES BUTTON
-========================================== */
-
-function sayYes() {
-
-  // ==========================================
-  // GOOGLE SHEETS URL
-  // ==========================================
-
-  const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
+      }
+    );
 
 
-  // ==========================================
-  // SAVE LOCALLY AS BACKUP
-  // ==========================================
+    /* ==========================================
+       YES BUTTON
+    ========================================== */
 
-  localStorage.setItem(
-    "poojaProposalResponse",
-    "YES"
-  );
+    function sayYes() {
 
-  localStorage.setItem(
-    "poojaProposalResponseTime",
-    new Date().toISOString()
-  );
+      /*
+        IMPORTANT:
+        This is the SAME Google Apps Script
+        response ID from your original code.
+      */
 
-
-  // ==========================================
-  // SEND RESPONSE TO GOOGLE SHEET
-  // ==========================================
-
-  const data = new URLSearchParams();
-
-  data.append("response", "YES");
-  data.append("name", "Pooja");
-  data.append("source", "GitHub Pages");
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
 
 
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: data
-  })
-  .then(() => {
-    console.log("Response sent successfully.");
-  })
-  .catch((error) => {
-    console.error("Could not send response:", error);
-  });
+      /* ======================================
+         SAVE LOCALLY AS BACKUP
+      ====================================== */
+
+      localStorage.setItem(
+        "poojaProposalResponse",
+        "YES"
+      );
+
+      localStorage.setItem(
+        "poojaProposalResponseTime",
+        new Date().toISOString()
+      );
 
 
-  // ==========================================
-  // CHANGE SCREEN
-  // ==========================================
+      /* ======================================
+         SEND RESPONSE TO GOOGLE SHEET
+      ====================================== */
 
-  document
-    .getElementById("proposal")
-    .classList.add("hidden");
+      const data =
+        new URLSearchParams();
 
-  document
-    .getElementById("success")
-    .classList.remove("hidden");
+      data.append(
+        "response",
+        "YES"
+      );
 
+      data.append(
+        "name",
+        "Pooja"
+      );
 
-  // ==========================================
-  // CELEBRATION
-  // ==========================================
-
-  createCelebration();
-
-}
-
-
-
-/* ==========================================
-   CONFETTI / CELEBRATION
-========================================== */
-
-function createCelebration() {
-
-  const emojis = [
-    "❤️",
-    "💕",
-    "💖",
-    "💍",
-    "🌹",
-    "✨",
-    "🎉",
-    "🥰"
-  ];
+      data.append(
+        "source",
+        "GitHub Pages"
+      );
 
 
-  for (let i = 0; i < 80; i++) {
+      fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: data
+        }
+      )
+      .then(() => {
 
-    const item =
-      document.createElement("div");
+        console.log(
+          "Response sent successfully."
+        );
 
-    item.className =
-      "confetti";
+      })
+      .catch((error) => {
 
-    item.innerHTML =
-      emojis[
-        Math.floor(
-          Math.random() * emojis.length
-        )
+        console.error(
+          "Could not send response:",
+          error
+        );
+
+      });
+
+
+      /* ======================================
+         CHANGE TO SUCCESS SCREEN
+      ====================================== */
+
+      document
+        .getElementById("finalProposal")
+        .classList.add("hidden");
+
+      document
+        .getElementById("success")
+        .classList.remove("hidden");
+
+
+      /* ======================================
+         CELEBRATION
+      ====================================== */
+
+      createCelebration();
+
+    }
+
+
+    /* ==========================================
+       CONFETTI / CELEBRATION
+    ========================================== */
+
+    function createCelebration() {
+
+      const emojis = [
+        "❤️",
+        "💕",
+        "💖",
+        "💍",
+        "🌹",
+        "✨",
+        "🎉",
+        "🥰",
+        "🐼"
       ];
 
 
-    item.style.fontSize =
-      (18 + Math.random() * 25) + "px";
+      for (let i = 0; i < 80; i++) {
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          "confetti";
+
+        item.innerHTML =
+          emojis[
+            Math.floor(
+              Math.random() * emojis.length
+            )
+          ];
 
 
-    document.body.appendChild(item);
+        item.style.fontSize =
+          (18 + Math.random() * 25) + "px";
 
 
-    setTimeout(() => {
-
-      const x =
-        (Math.random() - 0.5) * 700;
-
-      const y =
-        (Math.random() - 0.5) * 700;
+        document.body.appendChild(item);
 
 
-      item.style.transform =
-        `translate(${x}px, ${y}px)
-         rotate(${Math.random() * 720}deg)`;
+        setTimeout(() => {
+
+          const x =
+            (Math.random() - 0.5) * 700;
+
+          const y =
+            (Math.random() - 0.5) * 700;
 
 
-      item.style.opacity = "0";
+          item.style.transform =
+            `translate(${x}px, ${y}px)
+             rotate(${Math.random() * 720}deg)`;
 
-    }, 50);
+
+          item.style.opacity =
+            "0";
+
+        }, 50);
 
 
-    setTimeout(() => {
+        setTimeout(() => {
 
-      item.remove();
+          item.remove();
 
-    }, 1800);
+        }, 1800);
 
-  }
+      }
 
-}
+    }
 
-</script>
+  </script>
 
 </body>
 </html>
