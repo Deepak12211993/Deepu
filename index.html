@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,6 @@
   <title>Pooja ❤️ A Little Surprise</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -47,37 +47,24 @@
       color: #5d3042;
     }
 
-
     /* =========================================
        FLOATING HEARTS
-    ========================================= */
+    ========================================== */
 
     .heart {
       position: fixed;
-
       bottom: -40px;
-
       color: #ff7da7;
-
       font-size: 20px;
-
       pointer-events: none;
-
       animation: floatHeart linear infinite;
-
       opacity: 0.7;
-
       z-index: 0;
     }
 
-
     @keyframes floatHeart {
-
       0% {
-        transform:
-          translateY(0)
-          rotate(0deg);
-
+        transform: translateY(0) rotate(0deg);
         opacity: 0;
       }
 
@@ -86,61 +73,38 @@
       }
 
       100% {
-        transform:
-          translateY(-110vh)
-          rotate(360deg);
-
+        transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
       }
-
     }
-
 
     /* =========================================
        MAIN PAGE
-    ========================================= */
+    ========================================== */
 
     .page {
-
       min-height: 100vh;
-
       display: flex;
-
       justify-content: center;
-
       align-items: center;
-
       padding: 20px;
-
       position: relative;
-
       z-index: 1;
     }
 
-
     .card {
-
       width: 100%;
-
       max-width: 560px;
-
       min-height: 560px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       padding: 30px 24px;
-
       text-align: center;
 
-      background:
-        rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.92);
 
       backdrop-filter: blur(15px);
-
       -webkit-backdrop-filter: blur(15px);
 
       border-radius: 32px;
@@ -156,41 +120,29 @@
       overflow: hidden;
     }
 
-
     .screen {
       width: 100%;
     }
-
 
     .hidden {
       display: none !important;
     }
 
-
     /* =========================================
        PANDA
-    ========================================= */
+    ========================================== */
 
     .proposal-panda {
-
       position: relative;
-
       width: 250px;
-
       height: 180px;
-
       margin: 0 auto 5px;
-
       display: flex;
-
       justify-content: center;
-
       align-items: center;
     }
 
-
     .proposal-panda .panda-face {
-
       font-size: 105px;
 
       animation:
@@ -200,23 +152,15 @@
         infinite;
 
       position: relative;
-
       z-index: 1;
     }
 
-
     .proposal-panda .roses {
-
       position: absolute;
-
       right: 5px;
-
       top: 55px;
-
       font-size: 48px;
-
       transform: rotate(-12deg);
-
       z-index: 2;
 
       animation:
@@ -226,9 +170,7 @@
         infinite;
     }
 
-
     @keyframes pandaBounce {
-
       0%,
       100% {
         transform: translateY(0);
@@ -237,12 +179,9 @@
       50% {
         transform: translateY(-8px);
       }
-
     }
 
-
     @keyframes roseOffer {
-
       0%,
       100% {
         transform:
@@ -255,145 +194,36 @@
           rotate(-5deg)
           translateX(6px);
       }
-
     }
-
-
-    /* =========================================
-       POOJA PHOTO
-    ========================================= */
-
-    .photo-wrapper {
-
-      width: 170px;
-
-      height: 205px;
-
-      margin: -5px auto 15px;
-
-      padding: 6px;
-
-      background: white;
-
-      border-radius: 27px;
-
-      box-shadow:
-        0 12px 30px
-        rgba(194, 68, 110, 0.25);
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-
-    .pooja-photo {
-
-      display: block;
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-      border-radius: 21px;
-
-      animation:
-        photoFloat
-        3s
-        ease-in-out
-        infinite;
-    }
-
-
-    /* Image loading message */
-
-    .photo-loading {
-
-      position: absolute;
-
-      inset: 0;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      background: #fff0f5;
-
-      color: #df4d7c;
-
-      font-size: 14px;
-
-      border-radius: 21px;
-
-      z-index: 2;
-    }
-
-
-    .photo-loading.hidden {
-      display: none;
-    }
-
-
-    @keyframes photoFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-5px);
-      }
-
-    }
-
 
     /* =========================================
        TEXT
-    ========================================= */
+    ========================================== */
 
     h1 {
-
       color: #df4d7c;
-
       font-size: 30px;
-
       line-height: 1.25;
-
       margin: 18px 0 12px;
     }
 
-
     p {
-
       font-size: 18px;
-
       line-height: 1.65;
-
       margin: 12px 0;
     }
 
-
     .romantic {
-
       font-size: 19px;
-
       color: #704052;
     }
 
-
     /* =========================================
        SCREEN 2
-    ========================================= */
+    ========================================== */
 
     .fight-emojis {
-
       font-size: 48px;
-
       margin-bottom: 10px;
 
       animation:
@@ -403,9 +233,7 @@
         infinite;
     }
 
-
     @keyframes fightShake {
-
       0%,
       100% {
         transform: rotate(0deg);
@@ -418,24 +246,16 @@
       75% {
         transform: rotate(5deg);
       }
-
     }
 
-
     .idiot-title {
-
       color: #df3e72;
-
       font-size: 31px;
-
       font-weight: bold;
-
       margin: 15px 0;
     }
 
-
     .message-box {
-
       background: #fff0f5;
 
       border:
@@ -445,7 +265,6 @@
       border-radius: 22px;
 
       padding: 18px;
-
       margin: 20px 0;
 
       box-shadow:
@@ -453,42 +272,29 @@
         rgba(223, 62, 114, 0.08);
     }
 
-
     .message-box p {
       margin: 10px 0;
     }
 
-
     .angry {
-
       color: #e34a74;
-
       font-weight: bold;
     }
 
-
     .cute {
-
       color: #7c4859;
     }
 
-
     /* =========================================
        BUTTONS
-    ========================================= */
+    ========================================== */
 
     .btn {
-
       border: none;
-
       border-radius: 999px;
-
       padding: 15px 28px;
-
       font-size: 17px;
-
       font-weight: bold;
-
       cursor: pointer;
 
       transition:
@@ -496,14 +302,11 @@
         box-shadow 0.2s ease;
     }
 
-
     .btn:hover {
       transform: scale(1.05);
     }
 
-
     .continue {
-
       margin-top: 18px;
 
       background:
@@ -520,22 +323,18 @@
         rgba(224, 65, 113, 0.30);
     }
 
-
     /* =========================================
        SCREEN 3
-    ========================================= */
+    ========================================== */
 
     .love-header {
-
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 42px;
-
       font-weight: bold;
-
       font-style: italic;
 
       background:
@@ -547,9 +346,7 @@
         );
 
       -webkit-background-clip: text;
-
       background-clip: text;
-
       color: transparent;
 
       margin: 0 0 18px;
@@ -565,9 +362,7 @@
         infinite;
     }
 
-
     @keyframes loveGlow {
-
       0%,
       100% {
         transform: scale(1);
@@ -576,26 +371,18 @@
       50% {
         transform: scale(1.04);
       }
-
     }
-
 
     /* =========================================
        PROPOSAL GIF
-    ========================================= */
+    ========================================== */
 
     .gif-container {
-
       width: 100%;
-
       max-width: 360px;
-
       margin: 10px auto 18px;
-
       padding: 8px;
-
       background: white;
-
       border-radius: 24px;
 
       box-shadow:
@@ -605,74 +392,48 @@
       overflow: hidden;
     }
 
-
     .gif-container img {
-
       display: block;
-
       width: 100%;
-
       max-height: 250px;
-
       object-fit: contain;
-
       border-radius: 18px;
     }
 
-
     .last-breath {
-
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 20px;
-
       font-style: italic;
-
       color: #6c3b4d;
-
       line-height: 1.5;
-
       margin: 15px 0;
     }
 
-
     .question {
-
       margin-top: 18px;
-
       font-size: 28px;
-
       color: #d83f70;
-
       font-weight: bold;
     }
 
-
     /* =========================================
        YES / NO
-    ========================================= */
+    ========================================== */
 
     .button-area {
-
       position: relative;
-
       width: 100%;
-
       height: 180px;
-
       margin-top: 10px;
     }
 
-
     .yes {
-
       position: absolute;
-
       left: 50%;
-
       top: 55px;
 
       transform:
@@ -694,28 +455,21 @@
       z-index: 5;
     }
 
-
     .yes:hover {
-
       transform:
         translateX(-115%)
         scale(1.05);
     }
 
-
     .no {
-
       position: absolute;
-
       left: 50%;
-
       top: 55px;
 
       transform:
         translateX(10%);
 
       background: #eeeeee;
-
       color: #777;
 
       box-shadow:
@@ -725,23 +479,17 @@
       z-index: 10;
     }
 
-
     .hint {
-
       font-size: 13px;
-
       color: #a66a80;
-
       margin-top: -20px;
     }
 
-
     /* =========================================
        SUCCESS
-    ========================================= */
+    ========================================== */
 
     .success-emoji {
-
       font-size: 70px;
 
       animation:
@@ -751,9 +499,7 @@
         infinite;
     }
 
-
     @keyframes successBounce {
-
       0%,
       100% {
         transform: scale(1);
@@ -762,43 +508,30 @@
       50% {
         transform: scale(1.15);
       }
-
     }
 
-
     .success-title {
-
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 42px;
-
       color: #df3e72;
-
       font-weight: bold;
-
       margin: 20px 0;
     }
 
-
     /* =========================================
        CONFETTI
-    ========================================= */
+    ========================================== */
 
     .confetti {
-
       position: fixed;
-
       left: 50%;
-
       top: 50%;
-
       pointer-events: none;
-
       font-size: 25px;
-
       z-index: 100;
 
       transition:
@@ -806,133 +539,89 @@
         opacity 1.7s ease-out;
     }
 
-
     /* =========================================
        MOBILE
-    ========================================= */
+    ========================================== */
 
     @media (max-width: 500px) {
-
       body {
         overflow: auto;
       }
-
 
       .page {
         padding: 12px;
       }
 
-
       .card {
-
         min-height: 580px;
-
         padding: 25px 18px;
-
         border-radius: 27px;
       }
 
-
       .proposal-panda {
-
         transform: scale(0.80);
-
         margin-top: -15px;
-
         margin-bottom: -25px;
       }
-
-
-      .photo-wrapper {
-
-        width: 140px;
-
-        height: 170px;
-
-        margin: 0 auto 10px;
-      }
-
 
       h1 {
         font-size: 26px;
       }
 
-
       p {
         font-size: 17px;
       }
-
 
       .idiot-title {
         font-size: 27px;
       }
 
-
       .fight-emojis {
         font-size: 40px;
       }
-
 
       .love-header {
         font-size: 34px;
       }
 
-
       .question {
         font-size: 25px;
       }
-
 
       .gif-container {
         max-width: 300px;
       }
 
-
       .gif-container img {
         max-height: 200px;
       }
-
 
       .last-breath {
         font-size: 18px;
       }
 
-
       .success-title {
         font-size: 36px;
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- =========================================
-       FLOATING HEARTS
-  ========================================== -->
-
+  <!-- FLOATING HEARTS -->
   <div id="hearts"></div>
-
 
   <div class="page">
 
     <div class="card">
 
-
-      <!-- =====================================
-           SCREEN 1
-      ====================================== -->
+      <!-- SCREEN 1 -->
 
       <section
         id="welcome"
         class="screen"
       >
-
 
         <!-- Panda -->
 
@@ -948,40 +637,13 @@
 
         </div>
 
-
-        <!-- =====================================
-             POOJA PHOTO
-        ====================================== -->
-
-        <div class="photo-wrapper">
-
-          <div
-            id="photoLoading"
-            class="photo-loading"
-          >
-            Loading Pooja's photo ❤️
-          </div>
-
-
-          <img
-            id="poojaPhoto"
-            class="pooja-photo"
-            src="https://Deepak122111993.github.io/Deepu/pooja.jpeg"
-            alt="Pooja ❤️"
-          >
-
-        </div>
-
-
         <h1>
           Hi Pooja ❤️
         </h1>
 
-
         <p class="romantic">
           A little something special for you... 🌹❤️
         </p>
-
 
         <button
           class="btn continue"
@@ -990,29 +652,23 @@
           Continue 💕
         </button>
 
-
       </section>
 
 
-      <!-- =====================================
-           SCREEN 2
-      ====================================== -->
+      <!-- SCREEN 2 -->
 
       <section
         id="proposal"
         class="screen hidden"
       >
 
-
         <div class="fight-emojis">
           😤🥊🐼💢🥊😤
         </div>
 
-
         <div class="idiot-title">
           Hey Idiot! 😤❤️
         </div>
-
 
         <div class="message-box">
 
@@ -1031,11 +687,9 @@
 
         </div>
 
-
         <div style="font-size: 38px;">
           😤💢🥊🐼🥊💢😤
         </div>
-
 
         <button
           class="btn continue"
@@ -1044,24 +698,19 @@
           Surprise for you! 😜💕
         </button>
 
-
       </section>
 
 
-      <!-- =====================================
-           SCREEN 3
-      ====================================== -->
+      <!-- SCREEN 3 -->
 
       <section
         id="finalProposal"
         class="screen hidden"
       >
 
-
         <div class="love-header">
           Ami Tomake Bhalobashi ❤️
         </div>
-
 
         <!-- Proposal GIF -->
 
@@ -1077,17 +726,14 @@
 
         </div>
 
-
         <p class="last-breath">
           I'll hold your hand
           until my last breath. ❤️
         </p>
 
-
         <div class="question">
           Will you marry me? 💍❤️
         </div>
-
 
         <!-- YES / NO -->
 
@@ -1095,7 +741,6 @@
           class="button-area"
           id="buttonArea"
         >
-
 
           <!-- YES -->
 
@@ -1105,7 +750,6 @@
           >
             Yes! 💖
           </button>
-
 
           <!-- NO -->
 
@@ -1117,32 +761,25 @@
             No 😜
           </button>
 
-
         </div>
-
 
         <div class="hint">
           P.S. The No button is feeling very shy... 😄💕
         </div>
 
-
       </section>
 
 
-      <!-- =====================================
-           SCREEN 4
-      ====================================== -->
+      <!-- SCREEN 4 -->
 
       <section
         id="success"
         class="screen hidden"
       >
 
-
         <div class="success-emoji">
           💖❤️💖
         </div>
-
 
         <div class="proposal-panda">
 
@@ -1152,22 +789,9 @@
 
         </div>
 
-
         <div class="success-title">
           I Love You Too ❤️
         </div>
-
-
-        <p>
-          You just made me the happiest person
-          in the world! 🥰
-        </p>
-
-
-        <p>
-          Forever starts here. 💍❤️
-        </p>
-
 
       </section>
 
@@ -1179,83 +803,20 @@
 
   <script>
 
-
-    /* =========================================
-       POOJA IMAGE
-    ========================================= */
-
-    const poojaPhoto =
-      document.getElementById("poojaPhoto");
-
-    const photoLoading =
-      document.getElementById("photoLoading");
-
-
-    /*
-      PRIMARY:
-      GitHub Pages image
-
-      FALLBACK:
-      Raw GitHub image
-    */
-
-    poojaPhoto.onload = function () {
-
-      photoLoading.classList.add("hidden");
-
-    };
-
-
-    poojaPhoto.onerror = function () {
-
-      console.log(
-        "GitHub Pages image failed. Trying raw GitHub..."
-      );
-
-
-      /*
-        FALLBACK IMAGE
-      */
-
-      if (
-        !poojaPhoto.dataset.fallback
-      ) {
-
-        poojaPhoto.dataset.fallback = "true";
-
-        poojaPhoto.src =
-          "https://raw.githubusercontent.com/Deepak122111993/Deepu/main/pooja.jpeg";
-
-      }
-
-      else {
-
-        photoLoading.innerHTML =
-          "Photo could not be loaded ❤️<br><small>Check pooja.jpeg filename</small>";
-
-      }
-
-    };
-
-
     /* =========================================
        FLOATING HEARTS
-    ========================================= */
+    ========================================== */
 
     const heartContainer =
       document.getElementById("hearts");
 
-
     const heartSymbols = [
-
       "❤️",
       "💕",
       "💗",
       "💖",
       "♡"
-
     ];
-
 
     for (
       let i = 0;
@@ -1266,10 +827,8 @@
       const heart =
         document.createElement("div");
 
-
       heart.className =
         "heart";
-
 
       heart.innerHTML =
         heartSymbols[
@@ -1279,10 +838,8 @@
           )
         ];
 
-
       heart.style.left =
         Math.random() * 100 + "vw";
-
 
       heart.style.animationDuration =
         (
@@ -1290,12 +847,10 @@
           Math.random() * 6
         ) + "s";
 
-
       heart.style.animationDelay =
         (
           -Math.random() * 10
         ) + "s";
-
 
       heart.style.fontSize =
         (
@@ -1303,24 +858,21 @@
           Math.random() * 20
         ) + "px";
 
-
       heartContainer.appendChild(
         heart
       );
-
     }
 
 
     /* =========================================
        SCREEN 1 → SCREEN 2
-    ========================================= */
+    ========================================== */
 
     function showProposal() {
 
       document
         .getElementById("welcome")
         .classList.add("hidden");
-
 
       document
         .getElementById("proposal")
@@ -1331,14 +883,13 @@
 
     /* =========================================
        SCREEN 2 → SCREEN 3
-    ========================================= */
+    ========================================== */
 
     function showFinalProposal() {
 
       document
         .getElementById("proposal")
         .classList.add("hidden");
-
 
       document
         .getElementById("finalProposal")
@@ -1349,33 +900,27 @@
 
     /* =========================================
        ESCAPING NO BUTTON
-    ========================================= */
+    ========================================== */
 
     const noButton =
       document.getElementById("noButton");
 
-
     const buttonArea =
       document.getElementById("buttonArea");
-
 
     function moveNoButton() {
 
       const areaWidth =
         buttonArea.clientWidth;
 
-
       const areaHeight =
         buttonArea.clientHeight;
-
 
       const buttonWidth =
         noButton.offsetWidth;
 
-
       const buttonHeight =
         noButton.offsetHeight;
-
 
       const maxX =
         Math.max(
@@ -1385,7 +930,6 @@
           10
         );
 
-
       const maxY =
         Math.max(
           10,
@@ -1393,7 +937,6 @@
           buttonHeight -
           10
         );
-
 
       const randomX =
         10 +
@@ -1403,7 +946,6 @@
           maxX - 10
         );
 
-
       const randomY =
         10 +
         Math.random() *
@@ -1412,18 +954,14 @@
           maxY - 10
         );
 
-
       noButton.style.left =
         randomX + "px";
-
 
       noButton.style.top =
         randomY + "px";
 
-
       noButton.style.transform =
         "none";
-
     }
 
 
@@ -1492,10 +1030,9 @@
 
     /* =========================================
        YES BUTTON
-    ========================================= */
+    ========================================== */
 
     function sayYes() {
-
 
       /*
         GOOGLE APPS SCRIPT
@@ -1512,7 +1049,6 @@
         "YES"
       );
 
-
       localStorage.setItem(
         "poojaProposalResponseTime",
         new Date().toISOString()
@@ -1524,18 +1060,15 @@
       const data =
         new URLSearchParams();
 
-
       data.append(
         "response",
         "YES"
       );
 
-
       data.append(
         "name",
         "Pooja"
       );
-
 
       data.append(
         "source",
@@ -1547,9 +1080,7 @@
         GOOGLE_SCRIPT_URL,
         {
           method: "POST",
-
           mode: "no-cors",
-
           body: data
         }
       )
@@ -1576,7 +1107,6 @@
         .getElementById("finalProposal")
         .classList.add("hidden");
 
-
       document
         .getElementById("success")
         .classList.remove("hidden");
@@ -1591,12 +1121,11 @@
 
     /* =========================================
        CONFETTI
-    ========================================= */
+    ========================================== */
 
     function createCelebration() {
 
       const emojis = [
-
         "❤️",
         "💕",
         "💖",
@@ -1606,9 +1135,7 @@
         "🎉",
         "🥰",
         "🐼"
-
       ];
-
 
       for (
         let i = 0;
@@ -1619,10 +1146,8 @@
         const item =
           document.createElement("div");
 
-
         item.className =
           "confetti";
-
 
         item.innerHTML =
           emojis[
@@ -1632,18 +1157,15 @@
             )
           ];
 
-
         item.style.fontSize =
           (
             18 +
             Math.random() * 25
           ) + "px";
 
-
         document.body.appendChild(
           item
         );
-
 
         setTimeout(() => {
 
@@ -1653,25 +1175,20 @@
               0.5
             ) * 700;
 
-
           const y =
             (
               Math.random() -
               0.5
             ) * 700;
 
-
           item.style.transform =
             `translate(${x}px, ${y}px)
              rotate(${Math.random() * 720}deg)`;
 
-
           item.style.opacity =
             "0";
 
-
         }, 50);
-
 
         setTimeout(() => {
 
@@ -1683,9 +1200,9 @@
 
     }
 
-
   </script>
 
 </body>
 
 </html>
+```
