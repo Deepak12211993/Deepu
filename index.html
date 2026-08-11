@@ -706,11 +706,17 @@ noButton.addEventListener(
 
 function sayYes() {
 
-  /*
-   * Store the response locally.
-   * This gives you a response even
-   * without a server.
-   */
+  // ==========================================
+  // GOOGLE SHEETS URL
+  // ==========================================
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
+
+
+  // ==========================================
+  // SAVE LOCALLY AS BACKUP
+  // ==========================================
 
   localStorage.setItem(
     "poojaProposalResponse",
@@ -723,9 +729,33 @@ function sayYes() {
   );
 
 
-  /*
-   * Change screen
-   */
+  // ==========================================
+  // SEND RESPONSE TO GOOGLE SHEET
+  // ==========================================
+
+  const data = new URLSearchParams();
+
+  data.append("response", "YES");
+  data.append("name", "Pooja");
+  data.append("source", "GitHub Pages");
+
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: data
+  })
+  .then(() => {
+    console.log("Response sent successfully.");
+  })
+  .catch((error) => {
+    console.error("Could not send response:", error);
+  });
+
+
+  // ==========================================
+  // CHANGE SCREEN
+  // ==========================================
 
   document
     .getElementById("proposal")
@@ -736,9 +766,9 @@ function sayYes() {
     .classList.remove("hidden");
 
 
-  /*
-   * Celebration
-   */
+  // ==========================================
+  // CELEBRATION
+  // ==========================================
 
   createCelebration();
 
