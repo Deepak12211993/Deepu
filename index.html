@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,6 +182,41 @@
 
       50% {
         transform: rotate(-5deg) translateX(6px);
+      }
+    }
+
+    /* ================================
+       POOJA PHOTO - SCREEN 1
+    ================================ */
+
+    .pooja-photo {
+      display: block;
+
+      width: 150px;
+      height: 185px;
+
+      object-fit: cover;
+
+      margin: -5px auto 15px;
+
+      border-radius: 25px;
+
+      border: 5px solid #ffffff;
+
+      box-shadow:
+        0 12px 30px rgba(194, 68, 110, 0.25);
+
+      animation: photoFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes photoFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
       }
     }
 
@@ -560,10 +595,17 @@
       }
 
       .proposal-panda {
-        transform: scale(0.88);
+        transform: scale(0.80);
 
-        margin-top: -10px;
-        margin-bottom: -10px;
+        margin-top: -15px;
+        margin-bottom: -25px;
+      }
+
+      .pooja-photo {
+        width: 125px;
+        height: 155px;
+
+        margin: 0 auto 10px;
       }
 
       h1 {
@@ -616,226 +658,231 @@
 
   <div id="hearts"></div>
 
+
   <div class="page">
 
-```
-<div class="card">
+    <div class="card">
 
 
-  <!-- =================================
-       SCREEN 1
-  ================================== -->
+      <!-- =================================
+           SCREEN 1
+      ================================== -->
 
-  <section id="welcome" class="screen">
+      <section id="welcome" class="screen">
 
-    <!-- Cute panda proposing with roses -->
+        <!-- Cute panda proposing with roses -->
 
-    <div class="proposal-panda">
+        <div class="proposal-panda">
 
-      <div class="panda-face">
-        🐼
-      </div>
+          <div class="panda-face">
+            🐼
+          </div>
 
-      <div class="roses">
-        🌹🌹🌹
-      </div>
+          <div class="roses">
+            🌹🌹🌹
+          </div>
 
-    </div>
-
-
-    <h1>
-      Hi Pooja ❤️
-    </h1>
+        </div>
 
 
-    <p class="romantic">
-      A little something special for you... 🌹❤️
-    </p>
+        <!-- =================================
+             POOJA PHOTO
+        ================================== -->
+
+        <img
+          src="pooja.jpg"
+          alt="Pooja ❤️"
+          class="pooja-photo"
+        >
 
 
-    <button
-      class="btn continue"
-      onclick="showProposal()"
-    >
-      Continue 💕
-    </button>
-
-  </section>
+        <h1>
+          Hi Pooja ❤️
+        </h1>
 
 
-  <!-- =================================
-       SCREEN 2
-  ================================== -->
-
-  <section
-    id="proposal"
-    class="screen hidden"
-  >
-
-    <div class="fight-emojis">
-      😤🥊🐼💢🥊😤
-    </div>
+        <p class="romantic">
+          A little something special for you... 🌹❤️
+        </p>
 
 
-    <div class="idiot-title">
-      Hey Idiot! 😤❤️
-    </div>
+        <button
+          class="btn continue"
+          onclick="showProposal()"
+        >
+          Continue 💕
+        </button>
+
+      </section>
 
 
-    <div class="message-box">
+      <!-- =================================
+           SCREEN 2
+      ================================== -->
 
-      <p class="angry">
-        📞 Call maddaga pick madu!
-      </p>
-
-      <p class="angry">
-        💬 Message maddaga reply madu!
-      </p>
-
-      <p class="cute">
-        Busy idre at least noddaga
-        reply / respond madu! 😤
-      </p>
-
-    </div>
-
-
-    <div style="font-size: 38px;">
-      😤💢🥊🐼🥊💢😤
-    </div>
-
-
-    <button
-      class="btn continue"
-      onclick="showFinalProposal()"
-    >
-      Surprise for you! 😜💕
-    </button>
-
-  </section>
-
-
-  <!-- =================================
-       SCREEN 3
-  ================================== -->
-
-  <section
-    id="finalProposal"
-    class="screen hidden"
-  >
-
-    <!-- Stylish header -->
-
-    <div class="love-header">
-      Ami Tomake Bhalobashi ❤️
-    </div>
-
-
-    <!-- =================================
-         ACTUAL PROPOSAL GIF
-
-         Boy giving rose to girl
-    ================================== -->
-
-    <div class="gif-container">
-
-      <img
-        src="https://media.tenor.com/images/placeholder.gif"
-        alt="Proposal"
-        onerror="this.src='https://media.giphy.com/media/QtBjlmw0vIZ7PL7A59/giphy.gif'"
+      <section
+        id="proposal"
+        class="screen hidden"
       >
 
-    </div>
+        <div class="fight-emojis">
+          😤🥊🐼💢🥊😤
+        </div>
 
 
-    <p class="last-breath">
-
-      I'll hold your hand
-      until my last breath. ❤️
-
-    </p>
+        <div class="idiot-title">
+          Hey Idiot! 😤❤️
+        </div>
 
 
-    <div class="question">
+        <div class="message-box">
 
-      Will you marry me? 💍❤️
+          <p class="angry">
+            📞 Call maddaga pick madu!
+          </p>
 
-    </div>
+          <p class="angry">
+            💬 Message maddaga reply madu!
+          </p>
+
+          <p class="cute">
+            Busy idre at least noddaga
+            reply / respond madu! 😤
+          </p>
+
+        </div>
 
 
-    <!-- =================================
-         YES / NO BUTTONS
-    ================================== -->
+        <div style="font-size: 38px;">
+          😤💢🥊🐼🥊💢😤
+        </div>
 
-    <div
-      class="button-area"
-      id="buttonArea"
-    >
 
-      <!-- YES STAYS CONSTANT -->
+        <button
+          class="btn continue"
+          onclick="showFinalProposal()"
+        >
+          Surprise for you! 😜💕
+        </button>
 
-      <button
-        class="btn yes"
-        onclick="sayYes()"
+      </section>
+
+
+      <!-- =================================
+           SCREEN 3
+      ================================== -->
+
+      <section
+        id="finalProposal"
+        class="screen hidden"
       >
-        Yes! 💖
-      </button>
+
+        <!-- Stylish header -->
+
+        <div class="love-header">
+          Ami Tomake Bhalobashi ❤️
+        </div>
 
 
-      <!-- NO ESCAPES -->
+        <!-- =================================
+             PROPOSAL GIF
+        ================================== -->
 
-      <button
-        class="btn no"
-        id="noButton"
-        type="button"
+        <div class="gif-container">
+
+          <img
+            src="https://media.tenor.com/images/placeholder.gif"
+            alt="Boy proposing to girl with roses"
+            onerror="this.src='https://media.giphy.com/media/QtBjlmw0vIZ7PL7A59/giphy.gif'"
+          >
+
+        </div>
+
+
+        <p class="last-breath">
+          I'll hold your hand
+          until my last breath. ❤️
+        </p>
+
+
+        <div class="question">
+          Will you marry me? 💍❤️
+        </div>
+
+
+        <!-- =================================
+             YES / NO BUTTONS
+        ================================== -->
+
+        <div
+          class="button-area"
+          id="buttonArea"
+        >
+
+          <!-- YES STAYS CONSTANT -->
+
+          <button
+            class="btn yes"
+            onclick="sayYes()"
+          >
+            Yes! 💖
+          </button>
+
+
+          <!-- NO ESCAPES -->
+
+          <button
+            class="btn no"
+            id="noButton"
+            type="button"
+          >
+            No 😜
+          </button>
+
+        </div>
+
+
+        <div class="hint">
+          P.S. The No button is feeling very shy... 😄💕
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           SCREEN 4
+      ================================== -->
+
+      <section
+        id="success"
+        class="screen hidden"
       >
-        No 😜
-      </button>
+
+        <div class="success-emoji">
+          💖❤️💖
+        </div>
+
+
+        <div class="proposal-panda">
+
+          <div class="panda-face">
+            🐼
+          </div>
+
+        </div>
+
+
+        <div class="success-title">
+          I Love You Too ❤️
+        </div>
+
+      </section>
+
 
     </div>
-
-
-    <div class="hint">
-      P.S. The No button is feeling very shy... 😄💕
-    </div>
-
-  </section>
-
-
-  <!-- =================================
-       SCREEN 4
-  ================================== -->
-
-  <section
-    id="success"
-    class="screen hidden"
-  >
-
-    <div class="success-emoji">
-      💖❤️💖
-    </div>
-
-
-    <div class="proposal-panda">
-
-      <div class="panda-face">
-        🐼
-      </div>
-
-    </div>
-
-
-    <div class="success-title">
-      I Love You Too ❤️
-    </div>
-
-  </section>
-
-
-</div>
-```
 
   </div>
+
 
   <script>
 
@@ -922,7 +969,7 @@
 
     /* ==========================================
        ESCAPING NO BUTTON
-       
+
        YES DOES NOT MOVE.
        ONLY NO MOVES.
     ========================================== */
@@ -1213,4 +1260,5 @@
   </script>
 
 </body>
+
 </html>
