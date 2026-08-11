@@ -146,55 +146,64 @@
       }
     }
 
-    /* Panda holding roses */
+    /* Panda proposing with roses */
 
-    .rose-bucket {
+    .proposal-panda {
       position: relative;
 
-      width: 230px;
-      height: 145px;
+      width: 250px;
+      height: 180px;
 
       margin: 0 auto 5px;
 
       display: flex;
       justify-content: center;
-      align-items: flex-end;
-
-      animation: bucketFloat 2s ease-in-out infinite;
+      align-items: center;
     }
 
-    .rose-bunch {
-      position: absolute;
+    .proposal-panda .panda-face {
+      font-size: 105px;
 
-      top: -10px;
+      animation: pandaBounce 2s ease-in-out infinite;
 
-      font-size: 55px;
-
-      letter-spacing: -10px;
-
-      z-index: 2;
-
-      filter: drop-shadow(0 5px 5px rgba(180, 50, 80, 0.15));
-    }
-
-    .bucket {
-      font-size: 75px;
-
-      position: absolute;
-      bottom: 0;
-
+      position: relative;
       z-index: 1;
     }
 
-    @keyframes bucketFloat {
+    .proposal-panda .roses {
+      position: absolute;
+
+      right: 5px;
+      top: 55px;
+
+      font-size: 48px;
+
+      transform: rotate(-12deg);
+
+      z-index: 2;
+
+      animation: roseOffer 1.8s ease-in-out infinite;
+    }
+
+    @keyframes roseOffer {
       0%,
       100% {
-        transform: rotate(-2deg) translateY(0);
+        transform: rotate(-12deg) translateX(0);
       }
 
       50% {
-        transform: rotate(2deg) translateY(-5px);
+        transform: rotate(-5deg) translateX(6px);
       }
+    }
+
+    .proposal-caption {
+      font-size: 18px;
+
+      color: #df4d7c;
+
+      font-weight: bold;
+
+      margin-top: -5px;
     }
 
     /* ================================
@@ -420,14 +429,6 @@
       border-radius: 18px;
     }
 
-    .gif-caption {
-      font-size: 13px;
-
-      color: #a66a80;
-
-      margin-top: 7px;
-    }
-
     .last-breath {
       font-family: Georgia, "Times New Roman", serif;
 
@@ -465,6 +466,8 @@
       margin-top: 10px;
     }
 
+    /* YES STAYS CONSTANT */
+
     .yes {
       position: absolute;
 
@@ -484,7 +487,15 @@
 
       box-shadow:
         0 10px 25px rgba(224, 65, 113, 0.35);
+
+      z-index: 5;
     }
+
+    .yes:hover {
+      transform: translateX(-115%) scale(1.05);
+    }
+
+    /* ONLY NO MOVES */
 
     .no {
       position: absolute;
@@ -517,7 +528,7 @@
     ================================ */
 
     .success-emoji {
-      font-size: 60px;
+      font-size: 70px;
 
       animation:
         successBounce 1s ease-in-out infinite;
@@ -535,19 +546,15 @@
     }
 
     .success-title {
-      font-size: 34px;
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 42px;
 
       color: #df3e72;
 
       font-weight: bold;
 
-      margin: 15px 0;
-    }
-
-    .small {
-      font-size: 14px;
-
-      color: #a66a80;
+      margin: 20px 0;
     }
 
     /* ================================
@@ -589,13 +596,10 @@
         border-radius: 27px;
       }
 
-      .panda {
-        font-size: 82px;
-      }
-
-      .rose-bucket {
-        transform: scale(0.9);
-        margin-top: -5px;
+      .proposal-panda {
+        transform: scale(0.88);
+        margin-top: -10px;
+        margin-bottom: -10px;
       }
 
       h1 {
@@ -633,6 +637,10 @@
       .last-breath {
         font-size: 18px;
       }
+
+      .success-title {
+        font-size: 36px;
+      }
     }
   </style>
 
@@ -649,42 +657,47 @@
 ```
 <div class="card">
 
+
   <!-- =================================
        SCREEN 1
   ================================== -->
 
   <section id="welcome" class="screen">
 
-    <!-- Cute panda -->
-    <div class="panda">
-      🐼
-    </div>
+    <!-- Panda proposing with roses -->
 
-    <!-- Panda's bucket of roses -->
-    <div class="rose-bucket">
+    <div class="proposal-panda">
 
-      <div class="rose-bunch">
+      <div class="panda-face">
+        🐼
+      </div>
+
+      <div class="roses">
         🌹🌹🌹
       </div>
 
-      <div class="bucket">
-        🪣
-      </div>
-
     </div>
+
+    <div class="proposal-caption">
+      A little something special for you... 🌹❤️
+    </div>
+
 
     <h1>
       Hi Pooja ❤️
     </h1>
 
+
     <p class="romantic">
-      This cute panda has brought
-      something special just for you... 🐼🌹
+      This cute panda has come to you
+      with roses and a little surprise... 🐼🌹
     </p>
 
+
     <p>
-      Please click the button below. 👀💕
+      I have something special for you. 💕
     </p>
+
 
     <button
       class="btn continue"
@@ -709,18 +722,16 @@
       😤🥊🐼💢🥊😤
     </div>
 
+
     <div class="idiot-title">
       Hey Idiot! 😤❤️
     </div>
+
 
     <div class="message-box">
 
       <p class="angry">
         📞 Call maddaga pick madu!
-      </p>
-
-      <p class="cute">
-        Yen call maadidru pickup maadalla? 😑
       </p>
 
       <p class="angry">
@@ -733,19 +744,16 @@
       </p>
 
       <p>
-        😠🥊 Don't make me fight with you!
-        🐼💢
-      </p>
-
-      <p>
-        But still... you're my favorite idiot. 😂❤️
+        🥺👉👈 Please don't ignore me! 💕
       </p>
 
     </div>
+
 
     <div style="font-size: 38px;">
-      🥺👉👈 💕
+      😤💢🥊🐼🥊💢😤
     </div>
+
 
     <button
       class="btn continue"
@@ -766,34 +774,32 @@
     class="screen hidden"
   >
 
-    <!-- Stylish Bengali header -->
+    <!-- Stylish header -->
+
     <div class="love-header">
-      ami tomake bhalobashi ❤️
+      Ami Tomake Bhalobashi ❤️
     </div>
 
+
     <div class="love-subtitle">
-      আমার ভালোবাসা শুধু তোমার জন্য... 🌹
+      ❤️ You are very special to me ❤️
     </div>
 
 
     <!-- =================================
-         PROPOSAL GIF
+         PROPOSING BOY TO GIRL GIF
 
-         Replace the src below with
-         your preferred bucket-of-roses /
-         proposal GIF URL.
+         Replace the URL below with a
+         direct GIF URL showing a boy
+         proposing to a girl with red roses.
     ================================== -->
 
     <div class="gif-container">
 
       <img
-        src="YOUR_PROPOSAL_GIF_URL_HERE"
-        alt="Cute bucket of roses proposal"
+        src="YOUR_BOY_PROPOSING_WITH_RED_ROSES_GIF_URL_HERE"
+        alt="Boy proposing to girl with red roses"
       >
-
-      <div class="gif-caption">
-        A little bucket of roses for you... 🌹🪣❤️
-      </div>
 
     </div>
 
@@ -813,12 +819,16 @@
     </div>
 
 
-    <!-- YES / NO -->
+    <!-- =================================
+         YES / NO BUTTONS
+    ================================== -->
 
     <div
       class="button-area"
       id="buttonArea"
     >
+
+      <!-- YES NEVER MOVES -->
 
       <button
         class="btn yes"
@@ -826,6 +836,9 @@
       >
         Yes! 💖
       </button>
+
+
+      <!-- NO ESCAPES -->
 
       <button
         class="btn no"
@@ -839,7 +852,7 @@
 
 
     <div class="hint">
-      P.S. The No button is a little shy... 😄💕
+      P.S. The No button is feeling very shy... 😄💕
     </div>
 
   </section>
@@ -855,37 +868,21 @@
   >
 
     <div class="success-emoji">
-      💖💍🎉
+      💖❤️💖
     </div>
+
 
     <div class="panda">
       🐼
     </div>
 
+
     <div class="success-title">
-      YAY! YOU SAID YES! 🥹❤️
-    </div>
-
-    <p>
-      Pooja, you just made me
-      the happiest person in the world. ❤️
-    </p>
-
-    <p>
-      From this moment,
-      let's start writing our
-      forever together. 🌹💕
-    </p>
-
-    <p>
-      I love you! ❤️
-    </p>
-
-    <div class="small">
-      Forever starts here. 💍
+      I Love You Too ❤️
     </div>
 
   </section>
+
 
 </div>
 ```
@@ -908,6 +905,7 @@
       "💖",
       "♡"
     ];
+
 
     for (let i = 0; i < 20; i++) {
 
@@ -936,6 +934,7 @@
         (15 + Math.random() * 20) + "px";
 
       heartContainer.appendChild(heart);
+
     }
 
 
@@ -975,6 +974,9 @@
 
     /* ==========================================
        ESCAPING NO BUTTON
+       
+       ONLY THE NO BUTTON MOVES.
+       YES BUTTON REMAINS CONSTANT.
     ========================================== */
 
     const noButton =
@@ -999,11 +1001,6 @@
         noButton.offsetHeight;
 
 
-      /*
-        Keep the button completely inside
-        the button area.
-      */
-
       const maxX =
         Math.max(
           10,
@@ -1018,10 +1015,12 @@
 
 
       const randomX =
-        10 + Math.random() * Math.max(1, maxX - 10);
+        10 + Math.random() *
+        Math.max(1, maxX - 10);
 
       const randomY =
-        10 + Math.random() * Math.max(1, maxY - 10);
+        10 + Math.random() *
+        Math.max(1, maxY - 10);
 
 
       noButton.style.left =
@@ -1064,10 +1063,9 @@
     );
 
 
-    /*
-      Also escape when the user presses
-      or attempts to click the No button.
-    */
+    /* ==========================================
+       POINTER
+    ========================================== */
 
     noButton.addEventListener(
       "pointerdown",
@@ -1092,10 +1090,7 @@
 
 
     /* ==========================================
-       EXTRA SAFETY:
-       If a click somehow reaches No,
-       immediately move it instead of
-       allowing any action.
+       EXTRA CLICK PROTECTION
     ========================================== */
 
     noButton.addEventListener(
@@ -1118,9 +1113,8 @@
     function sayYes() {
 
       /*
-        IMPORTANT:
-        This is the SAME Google Apps Script
-        response ID from your original code.
+        SAME GOOGLE APPS SCRIPT RESPONSE ID
+        FROM YOUR ORIGINAL CODE.
       */
 
       const GOOGLE_SCRIPT_URL =
