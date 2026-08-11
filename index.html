@@ -126,28 +126,6 @@
        PANDA
     ================================ */
 
-    .panda {
-      font-size: 105px;
-      line-height: 1;
-
-      margin-bottom: 5px;
-
-      animation: pandaBounce 2s ease-in-out infinite;
-    }
-
-    @keyframes pandaBounce {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    /* Panda proposing with roses */
-
     .proposal-panda {
       position: relative;
 
@@ -185,6 +163,17 @@
       animation: roseOffer 1.8s ease-in-out infinite;
     }
 
+    @keyframes pandaBounce {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
     @keyframes roseOffer {
       0%,
       100% {
@@ -194,16 +183,6 @@
       50% {
         transform: rotate(-5deg) translateX(6px);
       }
-    }
-
-    .proposal-caption {
-      font-size: 18px;
-
-      color: #df4d7c;
-
-      font-weight: bold;
-
-      margin-top: -5px;
     }
 
     /* ================================
@@ -217,14 +196,6 @@
       line-height: 1.25;
 
       margin: 18px 0 12px;
-    }
-
-    h2 {
-      color: #df4d7c;
-
-      font-size: 25px;
-
-      margin: 18px 0;
     }
 
     p {
@@ -369,7 +340,7 @@
 
       color: transparent;
 
-      margin: 0 0 5px;
+      margin: 0 0 18px;
 
       text-shadow:
         0 5px 20px rgba(223, 62, 114, 0.12);
@@ -386,14 +357,6 @@
       50% {
         transform: scale(1.04);
       }
-    }
-
-    .love-subtitle {
-      font-size: 15px;
-
-      color: #a66a80;
-
-      margin-bottom: 15px;
     }
 
     /* ================================
@@ -422,9 +385,9 @@
       display: block;
 
       width: 100%;
-      max-height: 230px;
+      max-height: 250px;
 
-      object-fit: cover;
+      object-fit: contain;
 
       border-radius: 18px;
     }
@@ -466,7 +429,7 @@
       margin-top: 10px;
     }
 
-    /* YES STAYS CONSTANT */
+    /* YES NEVER MOVES */
 
     .yes {
       position: absolute;
@@ -598,6 +561,7 @@
 
       .proposal-panda {
         transform: scale(0.88);
+
         margin-top: -10px;
         margin-bottom: -10px;
       }
@@ -631,7 +595,7 @@
       }
 
       .gif-container img {
-        max-height: 190px;
+        max-height: 200px;
       }
 
       .last-breath {
@@ -664,7 +628,7 @@
 
   <section id="welcome" class="screen">
 
-    <!-- Panda proposing with roses -->
+    <!-- Cute panda proposing with roses -->
 
     <div class="proposal-panda">
 
@@ -678,10 +642,6 @@
 
     </div>
 
-    <div class="proposal-caption">
-      A little something special for you... 🌹❤️
-    </div>
-
 
     <h1>
       Hi Pooja ❤️
@@ -689,13 +649,7 @@
 
 
     <p class="romantic">
-      This cute panda has come to you
-      with roses and a little surprise... 🐼🌹
-    </p>
-
-
-    <p>
-      I have something special for you. 💕
+      A little something special for you... 🌹❤️
     </p>
 
 
@@ -743,10 +697,6 @@
         reply / respond madu! 😤
       </p>
 
-      <p>
-        🥺👉👈 Please don't ignore me! 💕
-      </p>
-
     </div>
 
 
@@ -781,24 +731,18 @@
     </div>
 
 
-    <div class="love-subtitle">
-      ❤️ You are very special to me ❤️
-    </div>
-
-
     <!-- =================================
-         PROPOSING BOY TO GIRL GIF
+         ACTUAL PROPOSAL GIF
 
-         Replace the URL below with a
-         direct GIF URL showing a boy
-         proposing to a girl with red roses.
+         Boy giving rose to girl
     ================================== -->
 
     <div class="gif-container">
 
       <img
-        src="YOUR_BOY_PROPOSING_WITH_RED_ROSES_GIF_URL_HERE"
-        alt="Boy proposing to girl with red roses"
+        src="https://media.tenor.com/images/placeholder.gif"
+        alt="Proposal"
+        onerror="this.src='https://media.giphy.com/media/QtBjlmw0vIZ7PL7A59/giphy.gif'"
       >
 
     </div>
@@ -828,7 +772,7 @@
       id="buttonArea"
     >
 
-      <!-- YES NEVER MOVES -->
+      <!-- YES STAYS CONSTANT -->
 
       <button
         class="btn yes"
@@ -859,7 +803,7 @@
 
 
   <!-- =================================
-       SCREEN 4 — SUCCESS
+       SCREEN 4
   ================================== -->
 
   <section
@@ -872,8 +816,12 @@
     </div>
 
 
-    <div class="panda">
-      🐼
+    <div class="proposal-panda">
+
+      <div class="panda-face">
+        🐼
+      </div>
+
     </div>
 
 
@@ -975,8 +923,8 @@
     /* ==========================================
        ESCAPING NO BUTTON
        
-       ONLY THE NO BUTTON MOVES.
-       YES BUTTON REMAINS CONSTANT.
+       YES DOES NOT MOVE.
+       ONLY NO MOVES.
     ========================================== */
 
     const noButton =
@@ -1015,11 +963,13 @@
 
 
       const randomX =
-        10 + Math.random() *
+        10 +
+        Math.random() *
         Math.max(1, maxX - 10);
 
       const randomY =
-        10 + Math.random() *
+        10 +
+        Math.random() *
         Math.max(1, maxY - 10);
 
 
@@ -1034,9 +984,7 @@
     }
 
 
-    /* ==========================================
-       DESKTOP
-    ========================================== */
+    /* Desktop */
 
     noButton.addEventListener(
       "mouseenter",
@@ -1044,9 +992,7 @@
     );
 
 
-    /* ==========================================
-       MOBILE
-    ========================================== */
+    /* Mobile */
 
     noButton.addEventListener(
       "touchstart",
@@ -1063,9 +1009,7 @@
     );
 
 
-    /* ==========================================
-       POINTER
-    ========================================== */
+    /* Pointer */
 
     noButton.addEventListener(
       "pointerdown",
@@ -1079,9 +1023,7 @@
     );
 
 
-    /* ==========================================
-       KEYBOARD FOCUS
-    ========================================== */
+    /* Keyboard focus */
 
     noButton.addEventListener(
       "focus",
@@ -1089,9 +1031,7 @@
     );
 
 
-    /* ==========================================
-       EXTRA CLICK PROTECTION
-    ========================================== */
+    /* Extra click protection */
 
     noButton.addEventListener(
       "click",
@@ -1121,9 +1061,7 @@
         "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
 
 
-      /* ======================================
-         SAVE LOCALLY AS BACKUP
-      ====================================== */
+      /* Save locally */
 
       localStorage.setItem(
         "poojaProposalResponse",
@@ -1136,9 +1074,7 @@
       );
 
 
-      /* ======================================
-         SEND RESPONSE TO GOOGLE SHEET
-      ====================================== */
+      /* Send response to Google Sheet */
 
       const data =
         new URLSearchParams();
@@ -1184,9 +1120,7 @@
       });
 
 
-      /* ======================================
-         CHANGE TO SUCCESS SCREEN
-      ====================================== */
+      /* Change to success screen */
 
       document
         .getElementById("finalProposal")
@@ -1197,9 +1131,7 @@
         .classList.remove("hidden");
 
 
-      /* ======================================
-         CELEBRATION
-      ====================================== */
+      /* Celebration */
 
       createCelebration();
 
@@ -1207,7 +1139,7 @@
 
 
     /* ==========================================
-       CONFETTI / CELEBRATION
+       CONFETTI
     ========================================== */
 
     function createCelebration() {
