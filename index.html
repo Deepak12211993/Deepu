@@ -1,15 +1,28 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ff6f9c">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#ff6f9c"
+  >
 
   <title>Pooja ❤️ A Little Surprise</title>
 
+
   <style>
+
+    /* =========================================
+       GLOBAL
+    ========================================== */
+
     * {
       box-sizing: border-box;
     }
@@ -20,7 +33,10 @@
       padding: 0;
       width: 100%;
       min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
     }
 
     body {
@@ -33,11 +49,13 @@
           #ffd6e5 0%,
           transparent 35%
         ),
+
         radial-gradient(
           circle at bottom right,
           #ffc2d8 0%,
           transparent 35%
         ),
+
         linear-gradient(
           135deg,
           #fff5f8,
@@ -47,24 +65,39 @@
       color: #5d3042;
     }
 
+
     /* =========================================
        FLOATING HEARTS
     ========================================== */
 
     .heart {
       position: fixed;
+
       bottom: -40px;
+
       color: #ff7da7;
+
       font-size: 20px;
+
       pointer-events: none;
-      animation: floatHeart linear infinite;
+
+      animation:
+        floatHeart
+        linear
+        infinite;
+
       opacity: 0.7;
+
       z-index: 0;
     }
 
     @keyframes floatHeart {
+
       0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
+
         opacity: 0;
       }
 
@@ -73,39 +106,148 @@
       }
 
       100% {
-        transform: translateY(-110vh) rotate(360deg);
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
         opacity: 0;
       }
+
     }
+
+
+    /* =========================================
+       MUSIC BUTTON
+    ========================================== */
+
+    .music-button {
+
+      position: fixed;
+
+      top: 18px;
+      right: 18px;
+
+      width: 50px;
+      height: 50px;
+
+      border: 2px solid
+        rgba(255, 255, 255, 0.9);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.88);
+
+      color: #df3e72;
+
+      font-size: 22px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px
+        rgba(194, 68, 110, 0.25);
+
+      backdrop-filter:
+        blur(10px);
+
+      -webkit-backdrop-filter:
+        blur(10px);
+
+      z-index: 999;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .music-button:hover {
+
+      transform: scale(1.1);
+
+      box-shadow:
+        0 10px 30px
+        rgba(194, 68, 110, 0.35);
+    }
+
+    .music-button.playing {
+
+      animation:
+        musicPulse
+        1.3s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes musicPulse {
+
+      0%,
+      100% {
+        box-shadow:
+          0 8px 20px
+          rgba(194, 68, 110, 0.20);
+      }
+
+      50% {
+        box-shadow:
+          0 8px 32px
+          rgba(223, 62, 114, 0.55);
+      }
+    }
+
 
     /* =========================================
        MAIN PAGE
     ========================================== */
 
     .page {
+
       min-height: 100vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       padding: 20px;
+
       position: relative;
+
       z-index: 1;
     }
 
+
+    /* =========================================
+       CARD
+    ========================================== */
+
     .card {
+
       width: 100%;
+
       max-width: 560px;
+
       min-height: 560px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       padding: 30px 24px;
+
       text-align: center;
 
-      background: rgba(255, 255, 255, 0.92);
+      background:
+        rgba(255, 255, 255, 0.92);
 
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter:
+        blur(15px);
+
+      -webkit-backdrop-filter:
+        blur(15px);
 
       border-radius: 32px;
 
@@ -128,21 +270,31 @@
       display: none !important;
     }
 
+
     /* =========================================
        PANDA
     ========================================== */
 
     .proposal-panda {
+
       position: relative;
+
       width: 250px;
       height: 180px;
-      margin: 0 auto 5px;
+
+      margin:
+        0 auto 5px;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
     }
 
-    .proposal-panda .panda-face {
+    .proposal-panda
+    .panda-face {
+
       font-size: 105px;
 
       animation:
@@ -152,15 +304,24 @@
         infinite;
 
       position: relative;
+
       z-index: 1;
     }
 
-    .proposal-panda .roses {
+    .proposal-panda
+    .roses {
+
       position: absolute;
+
       right: 5px;
+
       top: 55px;
+
       font-size: 48px;
-      transform: rotate(-12deg);
+
+      transform:
+        rotate(-12deg);
+
       z-index: 2;
 
       animation:
@@ -171,17 +332,21 @@
     }
 
     @keyframes pandaBounce {
+
       0%,
       100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-8px);
+        transform:
+          translateY(-8px);
       }
     }
 
     @keyframes roseOffer {
+
       0%,
       100% {
         transform:
@@ -196,34 +361,49 @@
       }
     }
 
+
     /* =========================================
        TEXT
     ========================================== */
 
     h1 {
+
       color: #df4d7c;
+
       font-size: 30px;
+
       line-height: 1.25;
-      margin: 18px 0 12px;
+
+      margin:
+        18px 0 12px;
     }
 
     p {
+
       font-size: 18px;
+
       line-height: 1.65;
-      margin: 12px 0;
+
+      margin:
+        12px 0;
     }
 
     .romantic {
+
       font-size: 19px;
+
       color: #704052;
     }
+
 
     /* =========================================
        SCREEN 2
     ========================================== */
 
     .fight-emojis {
+
       font-size: 48px;
+
       margin-bottom: 10px;
 
       animation:
@@ -234,28 +414,38 @@
     }
 
     @keyframes fightShake {
+
       0%,
       100% {
-        transform: rotate(0deg);
+        transform:
+          rotate(0deg);
       }
 
       25% {
-        transform: rotate(-5deg);
+        transform:
+          rotate(-5deg);
       }
 
       75% {
-        transform: rotate(5deg);
+        transform:
+          rotate(5deg);
       }
     }
 
     .idiot-title {
+
       color: #df3e72;
+
       font-size: 31px;
+
       font-weight: bold;
-      margin: 15px 0;
+
+      margin:
+        15px 0;
     }
 
     .message-box {
+
       background: #fff0f5;
 
       border:
@@ -265,7 +455,9 @@
       border-radius: 22px;
 
       padding: 18px;
-      margin: 20px 0;
+
+      margin:
+        20px 0;
 
       box-shadow:
         0 8px 20px
@@ -273,11 +465,14 @@
     }
 
     .message-box p {
-      margin: 10px 0;
+      margin:
+        10px 0;
     }
 
     .angry {
+
       color: #e34a74;
+
       font-weight: bold;
     }
 
@@ -285,16 +480,24 @@
       color: #7c4859;
     }
 
+
     /* =========================================
        BUTTONS
     ========================================== */
 
     .btn {
+
       border: none;
+
       border-radius: 999px;
-      padding: 15px 28px;
+
+      padding:
+        15px 28px;
+
       font-size: 17px;
+
       font-weight: bold;
+
       cursor: pointer;
 
       transition:
@@ -303,10 +506,12 @@
     }
 
     .btn:hover {
-      transform: scale(1.05);
+      transform:
+        scale(1.05);
     }
 
     .continue {
+
       margin-top: 18px;
 
       background:
@@ -323,18 +528,22 @@
         rgba(224, 65, 113, 0.30);
     }
 
+
     /* =========================================
        SCREEN 3
     ========================================== */
 
     .love-header {
+
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 42px;
+
       font-weight: bold;
+
       font-style: italic;
 
       background:
@@ -345,15 +554,15 @@
           #b71d55
         );
 
-      -webkit-background-clip: text;
+      -webkit-background-clip:
+        text;
+
       background-clip: text;
+
       color: transparent;
 
-      margin: 0 0 18px;
-
-      text-shadow:
-        0 5px 20px
-        rgba(223, 62, 114, 0.12);
+      margin:
+        0 0 18px;
 
       animation:
         loveGlow
@@ -363,26 +572,37 @@
     }
 
     @keyframes loveGlow {
+
       0%,
       100% {
-        transform: scale(1);
+        transform:
+          scale(1);
       }
 
       50% {
-        transform: scale(1.04);
+        transform:
+          scale(1.04);
       }
     }
 
+
     /* =========================================
-       PROPOSAL GIF
+       GIF
     ========================================== */
 
     .gif-container {
+
       width: 100%;
+
       max-width: 360px;
-      margin: 10px auto 18px;
+
+      margin:
+        10px auto 18px;
+
       padding: 8px;
+
       background: white;
+
       border-radius: 24px;
 
       box-shadow:
@@ -393,47 +613,75 @@
     }
 
     .gif-container img {
+
       display: block;
+
       width: 100%;
+
       max-height: 250px;
+
       object-fit: contain;
+
       border-radius: 18px;
     }
 
+
+    /* =========================================
+       LAST BREATH
+    ========================================== */
+
     .last-breath {
+
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 20px;
+
       font-style: italic;
+
       color: #6c3b4d;
+
       line-height: 1.5;
-      margin: 15px 0;
+
+      margin:
+        15px 0;
     }
 
     .question {
+
       margin-top: 18px;
+
       font-size: 28px;
+
       color: #d83f70;
+
       font-weight: bold;
     }
 
+
     /* =========================================
-       YES / NO
+       YES / NO AREA
     ========================================== */
 
     .button-area {
+
       position: relative;
+
       width: 100%;
+
       height: 180px;
+
       margin-top: 10px;
     }
 
     .yes {
+
       position: absolute;
+
       left: 50%;
+
       top: 55px;
 
       transform:
@@ -456,20 +704,25 @@
     }
 
     .yes:hover {
+
       transform:
         translateX(-115%)
         scale(1.05);
     }
 
     .no {
+
       position: absolute;
+
       left: 50%;
+
       top: 55px;
 
       transform:
         translateX(10%);
 
       background: #eeeeee;
+
       color: #777;
 
       box-shadow:
@@ -480,16 +733,21 @@
     }
 
     .hint {
+
       font-size: 13px;
+
       color: #a66a80;
+
       margin-top: -20px;
     }
+
 
     /* =========================================
        SUCCESS
     ========================================== */
 
     .success-emoji {
+
       font-size: 70px;
 
       animation:
@@ -500,38 +758,53 @@
     }
 
     @keyframes successBounce {
+
       0%,
       100% {
-        transform: scale(1);
+        transform:
+          scale(1);
       }
 
       50% {
-        transform: scale(1.15);
+        transform:
+          scale(1.15);
       }
     }
 
     .success-title {
+
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
       font-size: 42px;
+
       color: #df3e72;
+
       font-weight: bold;
-      margin: 20px 0;
+
+      margin:
+        20px 0;
     }
+
 
     /* =========================================
        CONFETTI
     ========================================== */
 
     .confetti {
+
       position: fixed;
+
       left: 50%;
+
       top: 50%;
+
       pointer-events: none;
+
       font-size: 25px;
+
       z-index: 100;
 
       transition:
@@ -539,11 +812,13 @@
         opacity 1.7s ease-out;
     }
 
+
     /* =========================================
        MOBILE
     ========================================== */
 
     @media (max-width: 500px) {
+
       body {
         overflow: auto;
       }
@@ -553,14 +828,22 @@
       }
 
       .card {
+
         min-height: 580px;
-        padding: 25px 18px;
+
+        padding:
+          25px 18px;
+
         border-radius: 27px;
       }
 
       .proposal-panda {
-        transform: scale(0.80);
+
+        transform:
+          scale(0.80);
+
         margin-top: -15px;
+
         margin-bottom: -25px;
       }
 
@@ -603,27 +886,85 @@
       .success-title {
         font-size: 36px;
       }
+
+      .music-button {
+
+        width: 44px;
+        height: 44px;
+
+        top: 12px;
+        right: 12px;
+
+        font-size: 19px;
+      }
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- =========================================
+       BACKGROUND MUSIC
+  ========================================== -->
+
+  <audio
+    id="bgMusic"
+    loop
+    preload="auto"
+  >
+
+    <!--
+      Put romantic-song.mp3
+      in the same folder as index.html
+    -->
+
+    <source
+      src="romantic-song.mp3"
+      type="audio/mpeg"
+    >
+
+    Your browser does not support
+    the audio element.
+
+  </audio>
+
+
+  <!-- MUSIC BUTTON -->
+
+  <button
+    id="musicButton"
+    class="music-button"
+    type="button"
+    aria-label="Play romantic music"
+  >
+    🎵
+  </button>
+
+
   <!-- FLOATING HEARTS -->
+
   <div id="hearts"></div>
+
+
+  <!-- MAIN PAGE -->
 
   <div class="page">
 
     <div class="card">
 
-      <!-- SCREEN 1 -->
+
+      <!-- =====================================
+           SCREEN 1
+      ====================================== -->
 
       <section
         id="welcome"
         class="screen"
       >
-
-        <!-- Panda -->
 
         <div class="proposal-panda">
 
@@ -637,13 +978,17 @@
 
         </div>
 
+
         <h1>
           Hi Pooja ❤️
         </h1>
 
+
         <p class="romantic">
-          A little something special for you... 🌹❤️
+          A little something special
+          for you... 🌹❤️
         </p>
+
 
         <button
           class="btn continue"
@@ -655,7 +1000,10 @@
       </section>
 
 
-      <!-- SCREEN 2 -->
+
+      <!-- =====================================
+           SCREEN 2
+      ====================================== -->
 
       <section
         id="proposal"
@@ -666,9 +1014,11 @@
           😤🥊🐼💢🥊😤
         </div>
 
+
         <div class="idiot-title">
           Hey Sundri! 😤❤️
         </div>
+
 
         <div class="message-box">
 
@@ -687,9 +1037,11 @@
 
         </div>
 
+
         <div style="font-size: 38px;">
           😤💢🥊🐼🥊💢😤
         </div>
+
 
         <button
           class="btn continue"
@@ -701,39 +1053,44 @@
       </section>
 
 
-      <!-- SCREEN 3 -->
+
+      <!-- =====================================
+           SCREEN 3
+      ====================================== -->
 
       <section
         id="finalProposal"
         class="screen hidden"
       >
 
+
         <div class="love-header">
           Ami Tomake Bhalobashi ❤️
         </div>
 
-        <!-- Proposal GIF -->
+
+        <!-- PROPOSAL GIF -->
 
         <div class="gif-container">
 
           <img
-            src="https://media.tenor.com/images/placeholder.gif"
+            src="https://media.giphy.com/media/QtBjlmw0vIZ7PL7A59/giphy.gif"
             alt="Boy proposing to girl with roses"
-            onerror="
-              this.src='https://media.giphy.com/media/QtBjlmw0vIZ7PL7A59/giphy.gif'
-            "
           >
 
         </div>
 
+
         <p class="last-breath">
-          Can I hold your hand
-          until my last breath? ❤️
+          I’ll hold your hand
+          until my last breath. ❤️
         </p>
+
 
         <div class="question">
           Will you marry me? 💍❤️
         </div>
+
 
         <!-- YES / NO -->
 
@@ -742,8 +1099,6 @@
           id="buttonArea"
         >
 
-          <!-- YES -->
-
           <button
             class="btn yes"
             onclick="sayYes()"
@@ -751,7 +1106,6 @@
             Yes! 💖
           </button>
 
-          <!-- NO -->
 
           <button
             class="btn no"
@@ -763,14 +1117,19 @@
 
         </div>
 
+
         <div class="hint">
-          P.S. The No button is feeling very shy... 😄💕
+          P.S. The No button is feeling
+          very shy... 😄💕
         </div>
 
       </section>
 
 
-      <!-- SCREEN 4 -->
+
+      <!-- =====================================
+           SCREEN 4
+      ====================================== -->
 
       <section
         id="success"
@@ -781,6 +1140,7 @@
           💖❤️💖
         </div>
 
+
         <div class="proposal-panda">
 
           <div class="panda-face">
@@ -789,9 +1149,21 @@
 
         </div>
 
+
         <div class="success-title">
           I Love You Too ❤️
         </div>
+
+
+        <p class="romantic">
+          I knew you would say yes! 🥰
+        </p>
+
+
+        <p class="last-breath">
+          From this moment,
+          my hand is yours forever. ❤️
+        </p>
 
       </section>
 
@@ -801,7 +1173,177 @@
   </div>
 
 
+
   <script>
+
+
+    /* =========================================
+       BACKGROUND MUSIC
+    ========================================== */
+
+    const bgMusic =
+      document.getElementById("bgMusic");
+
+    const musicButton =
+      document.getElementById("musicButton");
+
+    let musicStarted = false;
+
+
+    /*
+      Set music volume.
+
+      0.35 = 35% volume.
+      This keeps the music soft behind
+      the romantic message.
+    */
+
+    bgMusic.volume = 0.35;
+
+
+    /*
+      Try to autoplay when page opens.
+    */
+
+    window.addEventListener(
+      "load",
+      function () {
+
+        bgMusic
+          .play()
+          .then(function () {
+
+            musicStarted = true;
+
+            musicButton.textContent = "🔊";
+
+            musicButton.classList.add(
+              "playing"
+            );
+
+          })
+          .catch(function () {
+
+            /*
+              Browser blocked autoplay.
+
+              Music will start on the
+              first interaction.
+            */
+
+            musicButton.textContent = "🎵";
+
+          });
+
+      }
+    );
+
+
+    /*
+      Start music after the visitor
+      interacts with the page.
+
+      This is important because
+      Chrome/Safari/mobile browsers
+      commonly block autoplay with sound.
+    */
+
+    function startMusic() {
+
+      if (musicStarted) {
+        return;
+      }
+
+      bgMusic
+        .play()
+        .then(function () {
+
+          musicStarted = true;
+
+          musicButton.textContent = "🔊";
+
+          musicButton.classList.add(
+            "playing"
+          );
+
+        })
+        .catch(function (error) {
+
+          console.log(
+            "Music could not start:",
+            error
+          );
+
+        });
+
+    }
+
+
+    /*
+      Start music when she interacts
+      with the page.
+    */
+
+    document.addEventListener(
+      "click",
+      startMusic,
+      {
+        once: true
+      }
+    );
+
+
+    /*
+      Music play / pause button.
+    */
+
+    musicButton.addEventListener(
+      "click",
+      function (event) {
+
+        /*
+          Prevent this click from
+          triggering the document
+          click listener.
+        */
+
+        event.stopPropagation();
+
+
+        if (bgMusic.paused) {
+
+          bgMusic
+            .play()
+            .then(function () {
+
+              musicStarted = true;
+
+              musicButton.textContent =
+                "🔊";
+
+              musicButton.classList.add(
+                "playing"
+              );
+
+            });
+
+        } else {
+
+          bgMusic.pause();
+
+          musicButton.textContent =
+            "🎵";
+
+          musicButton.classList.remove(
+            "playing"
+          );
+
+        }
+
+      }
+    );
+
+
 
     /* =========================================
        FLOATING HEARTS
@@ -810,6 +1352,7 @@
     const heartContainer =
       document.getElementById("hearts");
 
+
     const heartSymbols = [
       "❤️",
       "💕",
@@ -817,6 +1360,7 @@
       "💖",
       "♡"
     ];
+
 
     for (
       let i = 0;
@@ -827,8 +1371,10 @@
       const heart =
         document.createElement("div");
 
+
       heart.className =
         "heart";
+
 
       heart.innerHTML =
         heartSymbols[
@@ -838,8 +1384,10 @@
           )
         ];
 
+
       heart.style.left =
         Math.random() * 100 + "vw";
+
 
       heart.style.animationDuration =
         (
@@ -847,10 +1395,12 @@
           Math.random() * 6
         ) + "s";
 
+
       heart.style.animationDelay =
         (
           -Math.random() * 10
         ) + "s";
+
 
       heart.style.fontSize =
         (
@@ -858,10 +1408,13 @@
           Math.random() * 20
         ) + "px";
 
+
       heartContainer.appendChild(
         heart
       );
+
     }
+
 
 
     /* =========================================
@@ -870,15 +1423,20 @@
 
     function showProposal() {
 
+      startMusic();
+
+
       document
         .getElementById("welcome")
         .classList.add("hidden");
+
 
       document
         .getElementById("proposal")
         .classList.remove("hidden");
 
     }
+
 
 
     /* =========================================
@@ -887,15 +1445,20 @@
 
     function showFinalProposal() {
 
+      startMusic();
+
+
       document
         .getElementById("proposal")
         .classList.add("hidden");
+
 
       document
         .getElementById("finalProposal")
         .classList.remove("hidden");
 
     }
+
 
 
     /* =========================================
@@ -905,22 +1468,28 @@
     const noButton =
       document.getElementById("noButton");
 
+
     const buttonArea =
       document.getElementById("buttonArea");
+
 
     function moveNoButton() {
 
       const areaWidth =
         buttonArea.clientWidth;
 
+
       const areaHeight =
         buttonArea.clientHeight;
+
 
       const buttonWidth =
         noButton.offsetWidth;
 
+
       const buttonHeight =
         noButton.offsetHeight;
+
 
       const maxX =
         Math.max(
@@ -930,6 +1499,7 @@
           10
         );
 
+
       const maxY =
         Math.max(
           10,
@@ -937,6 +1507,7 @@
           buttonHeight -
           10
         );
+
 
       const randomX =
         10 +
@@ -946,6 +1517,7 @@
           maxX - 10
         );
 
+
       const randomY =
         10 +
         Math.random() *
@@ -954,18 +1526,24 @@
           maxY - 10
         );
 
+
       noButton.style.left =
         randomX + "px";
+
 
       noButton.style.top =
         randomY + "px";
 
+
       noButton.style.transform =
         "none";
+
     }
 
 
-    /* Desktop */
+    /*
+      Desktop
+    */
 
     noButton.addEventListener(
       "mouseenter",
@@ -973,7 +1551,9 @@
     );
 
 
-    /* Mobile */
+    /*
+      Mobile
+    */
 
     noButton.addEventListener(
       "touchstart",
@@ -990,7 +1570,9 @@
     );
 
 
-    /* Pointer */
+    /*
+      Pointer
+    */
 
     noButton.addEventListener(
       "pointerdown",
@@ -1004,7 +1586,9 @@
     );
 
 
-    /* Keyboard */
+    /*
+      Keyboard
+    */
 
     noButton.addEventListener(
       "focus",
@@ -1012,7 +1596,9 @@
     );
 
 
-    /* Extra click protection */
+    /*
+      Extra click protection
+    */
 
     noButton.addEventListener(
       "click",
@@ -1026,6 +1612,7 @@
 
       }
     );
+
 
 
     /* =========================================
@@ -1042,12 +1629,15 @@
         "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
 
 
-      /* Save locally */
+      /*
+        Save locally
+      */
 
       localStorage.setItem(
         "poojaProposalResponse",
         "YES"
       );
+
 
       localStorage.setItem(
         "poojaProposalResponseTime",
@@ -1055,20 +1645,26 @@
       );
 
 
-      /* Send response */
+      /*
+        Send response to
+        Google Apps Script.
+      */
 
       const data =
         new URLSearchParams();
+
 
       data.append(
         "response",
         "YES"
       );
 
+
       data.append(
         "name",
         "Pooja"
       );
+
 
       data.append(
         "source",
@@ -1080,18 +1676,20 @@
         GOOGLE_SCRIPT_URL,
         {
           method: "POST",
+
           mode: "no-cors",
+
           body: data
         }
       )
-      .then(() => {
+      .then(function () {
 
         console.log(
           "Response sent successfully."
         );
 
       })
-      .catch((error) => {
+      .catch(function (error) {
 
         console.error(
           "Could not send response:",
@@ -1101,22 +1699,35 @@
       });
 
 
-      /* Show success */
+      /*
+        Keep music playing.
+      */
+
+      startMusic();
+
+
+      /*
+        Show success screen.
+      */
 
       document
         .getElementById("finalProposal")
         .classList.add("hidden");
+
 
       document
         .getElementById("success")
         .classList.remove("hidden");
 
 
-      /* Celebration */
+      /*
+        Celebration.
+      */
 
       createCelebration();
 
     }
+
 
 
     /* =========================================
@@ -1126,6 +1737,7 @@
     function createCelebration() {
 
       const emojis = [
+
         "❤️",
         "💕",
         "💖",
@@ -1135,7 +1747,9 @@
         "🎉",
         "🥰",
         "🐼"
+
       ];
+
 
       for (
         let i = 0;
@@ -1146,8 +1760,10 @@
         const item =
           document.createElement("div");
 
+
         item.className =
           "confetti";
+
 
         item.innerHTML =
           emojis[
@@ -1157,44 +1773,58 @@
             )
           ];
 
+
         item.style.fontSize =
           (
             18 +
             Math.random() * 25
           ) + "px";
 
+
         document.body.appendChild(
           item
         );
 
-        setTimeout(() => {
 
-          const x =
-            (
-              Math.random() -
-              0.5
-            ) * 700;
+        setTimeout(
+          function () {
 
-          const y =
-            (
-              Math.random() -
-              0.5
-            ) * 700;
+            const x =
+              (
+                Math.random() -
+                0.5
+              ) * 700;
 
-          item.style.transform =
-            `translate(${x}px, ${y}px)
-             rotate(${Math.random() * 720}deg)`;
 
-          item.style.opacity =
-            "0";
+            const y =
+              (
+                Math.random() -
+                0.5
+              ) * 700;
 
-        }, 50);
 
-        setTimeout(() => {
+            item.style.transform =
+              `translate(${x}px, ${y}px)
+               rotate(${Math.random() * 720}deg)`;
 
-          item.remove();
 
-        }, 1800);
+            item.style.opacity =
+              "0";
+
+
+          },
+          50
+        );
+
+
+        setTimeout(
+          function () {
+
+            item.remove();
+
+          },
+          1800
+        );
 
       }
 
