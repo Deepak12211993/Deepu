@@ -16,7 +16,6 @@
 
   <title>Pooja ❤️ A Little Surprise</title>
 
-
   <style>
 
     /* =========================================
@@ -49,13 +48,11 @@
           #ffd6e5 0%,
           transparent 35%
         ),
-
         radial-gradient(
           circle at bottom right,
           #ffc2d8 0%,
           transparent 35%
         ),
-
         linear-gradient(
           135deg,
           #fff5f8,
@@ -75,7 +72,6 @@
       bottom: -40px;
 
       color: #ff7da7;
-
       font-size: 20px;
 
       pointer-events: none;
@@ -111,6 +107,7 @@
 
         opacity: 0;
       }
+
     }
 
 
@@ -189,6 +186,7 @@
           0 8px 32px
           rgba(223, 62, 114, 0.55);
       }
+
     }
 
 
@@ -328,6 +326,7 @@
         transform:
           translateY(-8px);
       }
+
     }
 
     @keyframes roseOffer {
@@ -344,6 +343,7 @@
           rotate(-5deg)
           translateX(6px);
       }
+
     }
 
 
@@ -411,6 +411,7 @@
         transform:
           rotate(5deg);
       }
+
     }
 
     .idiot-title {
@@ -558,6 +559,7 @@
         transform:
           scale(1.04);
       }
+
     }
 
 
@@ -732,8 +734,12 @@
         transform:
           scale(1.15);
       }
+
     }
 
+    /*
+      NEW THANK YOU MESSAGE
+    */
 
     .thank-you {
       font-family:
@@ -750,9 +756,13 @@
       line-height: 1.5;
 
       margin:
-        10px 0 20px;
+        10px 0 22px;
     }
 
+
+    /*
+      FINAL LOVE MESSAGE
+    */
 
     .success-title {
       font-family:
@@ -767,7 +777,7 @@
       font-weight: bold;
 
       margin:
-        20px 0;
+        0;
     }
 
 
@@ -878,6 +888,7 @@
 
         font-size: 19px;
       }
+
     }
 
   </style>
@@ -909,9 +920,7 @@
   </audio>
 
 
-  <!-- =========================================
-       MUSIC CONTROL
-  ========================================== -->
+  <!-- MUSIC BUTTON -->
 
   <button
     id="musicButton"
@@ -923,16 +932,12 @@
   </button>
 
 
-  <!-- =========================================
-       FLOATING HEARTS
-  ========================================== -->
+  <!-- FLOATING HEARTS -->
 
   <div id="hearts"></div>
 
 
-  <!-- =========================================
-       MAIN PAGE
-  ========================================== -->
+  <!-- MAIN PAGE -->
 
   <div class="page">
 
@@ -1035,7 +1040,7 @@
 
 
       <!-- =====================================
-           SCREEN 3
+           SCREEN 3 — PROPOSAL
       ====================================== -->
 
       <section
@@ -1047,8 +1052,6 @@
           Ami Tomake Bhalobashi ❤️
         </div>
 
-
-        <!-- PROPOSAL GIF -->
 
         <div class="gif-container">
 
@@ -1070,8 +1073,6 @@
           Will you marry me? 💍❤️
         </div>
 
-
-        <!-- YES / NO BUTTONS -->
 
         <div
           class="button-area"
@@ -1107,6 +1108,12 @@
 
       <!-- =====================================
            SCREEN 4 — SUCCESS
+           
+           IMPORTANT:
+           Only these messages are shown:
+           
+           ❤️ Thank you for accepting my proposal ❤️
+           I Love You Too ❤️
       ====================================== -->
 
       <section
@@ -1128,7 +1135,9 @@
         </div>
 
 
-        <!-- NEW MESSAGE -->
+        <!-- =================================
+             NEW MESSAGE
+        ================================== -->
 
         <div class="thank-you">
           ❤️ Thank you for accepting
@@ -1136,7 +1145,9 @@
         </div>
 
 
-        <!-- LOVE MESSAGE -->
+        <!-- =================================
+             FINAL MESSAGE
+        ================================== -->
 
         <div class="success-title">
           I Love You Too ❤️
@@ -1160,25 +1171,22 @@
     const bgMusic =
       document.getElementById("bgMusic");
 
-
     const musicButton =
       document.getElementById("musicButton");
-
 
     let musicStarted = false;
 
 
     /*
-      Music volume.
-
-      0.35 = 35% volume.
+      Background music volume.
+      35% keeps it soft and romantic.
     */
 
     bgMusic.volume = 0.35;
 
 
     /*
-      Try to start music immediately.
+      Try autoplay when page opens.
     */
 
     window.addEventListener(
@@ -1202,10 +1210,8 @@
           .catch(function () {
 
             /*
-              Autoplay was blocked.
-
-              Music will start after
-              user interaction.
+              Browser blocked autoplay.
+              Music starts after interaction.
             */
 
             musicButton.textContent =
@@ -1218,7 +1224,7 @@
 
 
     /*
-      Start music after interaction.
+      Start music after user interaction.
     */
 
     function startMusic() {
@@ -1226,7 +1232,6 @@
       if (musicStarted) {
         return;
       }
-
 
       bgMusic
         .play()
@@ -1255,8 +1260,8 @@
 
 
     /*
-      Start music when user clicks
-      anywhere on the page.
+      Start music when the user
+      interacts with the page.
     */
 
     document.addEventListener(
@@ -1269,7 +1274,7 @@
 
 
     /*
-      Music play/pause button.
+      Music play / pause button.
     */
 
     musicButton.addEventListener(
@@ -1437,7 +1442,6 @@
     const noButton =
       document.getElementById("noButton");
 
-
     const buttonArea =
       document.getElementById("buttonArea");
 
@@ -1447,14 +1451,11 @@
       const areaWidth =
         buttonArea.clientWidth;
 
-
       const areaHeight =
         buttonArea.clientHeight;
 
-
       const buttonWidth =
         noButton.offsetWidth;
-
 
       const buttonHeight =
         noButton.offsetHeight;
@@ -1591,7 +1592,7 @@
     function sayYes() {
 
       /*
-        GOOGLE APPS SCRIPT
+        Google Apps Script URL
       */
 
       const GOOGLE_SCRIPT_URL =
@@ -1599,7 +1600,7 @@
 
 
       /*
-        Save locally.
+        Save response locally.
       */
 
       localStorage.setItem(
@@ -1615,7 +1616,7 @@
 
 
       /*
-        Send response.
+        Send response to Google Apps Script.
       */
 
       const data =
@@ -1644,9 +1645,7 @@
         GOOGLE_SCRIPT_URL,
         {
           method: "POST",
-
           mode: "no-cors",
-
           body: data
         }
       )
@@ -1675,7 +1674,7 @@
 
 
       /*
-        Hide proposal.
+        Hide proposal screen.
       */
 
       document
@@ -1684,7 +1683,7 @@
 
 
       /*
-        Show success.
+        Show success screen.
       */
 
       document
@@ -1693,7 +1692,7 @@
 
 
       /*
-        Celebration.
+        Start celebration.
       */
 
       createCelebration();
@@ -1709,7 +1708,6 @@
     function createCelebration() {
 
       const emojis = [
-
         "❤️",
         "💕",
         "💖",
@@ -1719,7 +1717,6 @@
         "🎉",
         "🥰",
         "🐼"
-
       ];
 
 
