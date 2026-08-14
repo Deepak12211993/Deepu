@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -15,6 +16,7 @@
   >
 
   <title>Pooja ❤️ A Little Surprise</title>
+
 
   <style>
 
@@ -737,10 +739,6 @@
 
     }
 
-    /*
-      NEW THANK YOU MESSAGE
-    */
-
     .thank-you {
       font-family:
         Georgia,
@@ -758,11 +756,6 @@
       margin:
         10px 0 22px;
     }
-
-
-    /*
-      FINAL LOVE MESSAGE
-    */
 
     .success-title {
       font-family:
@@ -1108,12 +1101,6 @@
 
       <!-- =====================================
            SCREEN 4 — SUCCESS
-           
-           IMPORTANT:
-           Only these messages are shown:
-           
-           ❤️ Thank you for accepting my proposal ❤️
-           I Love You Too ❤️
       ====================================== -->
 
       <section
@@ -1135,19 +1122,11 @@
         </div>
 
 
-        <!-- =================================
-             NEW MESSAGE
-        ================================== -->
-
         <div class="thank-you">
           ❤️ Thank you for accepting
           my proposal ❤️
         </div>
 
-
-        <!-- =================================
-             FINAL MESSAGE
-        ================================== -->
 
         <div class="success-title">
           I Love You Too ❤️
@@ -1164,30 +1143,126 @@
   <script>
 
 
-    /* =========================================
-       BACKGROUND MUSIC
-    ========================================== */
+    // =====================================================
+    // GOOGLE SHEETS RESPONSE SYSTEM
+    // =====================================================
+
+    const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbx1O-lZPxI6-g1tYbYlN3hCMezdwhIo6uMbsRPBaKvOp6DnH8ouNgdTPBIQF5rtRqZUug/exec";
+
+
+    function sendResponse(
+      responseName
+    ) {
+
+      // -----------------------------------------------
+      // Save response locally
+      // -----------------------------------------------
+
+      localStorage.setItem(
+        "poojaProposalResponse",
+        responseName
+      );
+
+      localStorage.setItem(
+        "poojaProposalResponseTime",
+        new Date().toISOString()
+      );
+
+
+      // -----------------------------------------------
+      // Prepare data
+      // -----------------------------------------------
+
+      const data =
+        new URLSearchParams();
+
+
+      data.append(
+        "response",
+        responseName
+      );
+
+
+      data.append(
+        "name",
+        "Pooja"
+      );
+
+
+      data.append(
+        "source",
+        "GitHub Pages"
+      );
+
+
+      data.append(
+        "page",
+        window.location.href
+      );
+
+
+      data.append(
+        "userAgent",
+        navigator.userAgent
+      );
+
+
+      // -----------------------------------------------
+      // Send to Google Apps Script
+      // -----------------------------------------------
+
+      fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: data,
+          keepalive: true
+        }
+      )
+      .then(function () {
+
+        console.log(
+          "Response sent:",
+          responseName
+        );
+
+      })
+      .catch(function (error) {
+
+        console.error(
+          "Could not send response:",
+          error
+        );
+
+      });
+
+    }
+
+
+
+    // =====================================================
+    // BACKGROUND MUSIC
+    // =====================================================
 
     const bgMusic =
-      document.getElementById("bgMusic");
+      document.getElementById(
+        "bgMusic"
+      );
 
     const musicButton =
-      document.getElementById("musicButton");
+      document.getElementById(
+        "musicButton"
+      );
 
-    let musicStarted = false;
-
-
-    /*
-      Background music volume.
-      35% keeps it soft and romantic.
-    */
-
-    bgMusic.volume = 0.35;
+    let musicStarted =
+      false;
 
 
-    /*
-      Try autoplay when page opens.
-    */
+    bgMusic.volume =
+      0.35;
+
 
     window.addEventListener(
       "load",
@@ -1197,7 +1272,8 @@
           .play()
           .then(function () {
 
-            musicStarted = true;
+            musicStarted =
+              true;
 
             musicButton.textContent =
               "🔊";
@@ -1209,11 +1285,6 @@
           })
           .catch(function () {
 
-            /*
-              Browser blocked autoplay.
-              Music starts after interaction.
-            */
-
             musicButton.textContent =
               "🎵";
 
@@ -1223,21 +1294,19 @@
     );
 
 
-    /*
-      Start music after user interaction.
-    */
-
     function startMusic() {
 
       if (musicStarted) {
         return;
       }
 
+
       bgMusic
         .play()
         .then(function () {
 
-          musicStarted = true;
+          musicStarted =
+            true;
 
           musicButton.textContent =
             "🔊";
@@ -1259,11 +1328,6 @@
     }
 
 
-    /*
-      Start music when the user
-      interacts with the page.
-    */
-
     document.addEventListener(
       "click",
       startMusic,
@@ -1273,15 +1337,20 @@
     );
 
 
-    /*
-      Music play / pause button.
-    */
-
     musicButton.addEventListener(
       "click",
       function (event) {
 
         event.stopPropagation();
+
+
+        // -----------------------------------------------
+        // Record music button
+        // -----------------------------------------------
+
+        sendResponse(
+          "MUSIC_TOGGLE"
+        );
 
 
         if (bgMusic.paused) {
@@ -1290,7 +1359,8 @@
             .play()
             .then(function () {
 
-              musicStarted = true;
+              musicStarted =
+                true;
 
               musicButton.textContent =
                 "🔊";
@@ -1319,12 +1389,14 @@
 
 
 
-    /* =========================================
-       FLOATING HEARTS
-    ========================================== */
+    // =====================================================
+    // FLOATING HEARTS
+    // =====================================================
 
     const heartContainer =
-      document.getElementById("hearts");
+      document.getElementById(
+        "hearts"
+      );
 
 
     const heartSymbols = [
@@ -1343,7 +1415,9 @@
     ) {
 
       const heart =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
 
       heart.className =
@@ -1360,27 +1434,32 @@
 
 
       heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() *
+        100 +
+        "vw";
 
 
       heart.style.animationDuration =
         (
           5 +
           Math.random() * 6
-        ) + "s";
+        ) +
+        "s";
 
 
       heart.style.animationDelay =
         (
           -Math.random() * 10
-        ) + "s";
+        ) +
+        "s";
 
 
       heart.style.fontSize =
         (
           15 +
           Math.random() * 20
-        ) + "px";
+        ) +
+        "px";
 
 
       heartContainer.appendChild(
@@ -1391,59 +1470,127 @@
 
 
 
-    /* =========================================
-       SCREEN 1 → SCREEN 2
-    ========================================== */
+    // =====================================================
+    // SCREEN 1 → SCREEN 2
+    // =====================================================
 
     function showProposal() {
 
+      sendResponse(
+        "CONTINUE"
+      );
+
+
       startMusic();
 
 
       document
-        .getElementById("welcome")
-        .classList.add("hidden");
+        .getElementById(
+          "welcome"
+        )
+        .classList.add(
+          "hidden"
+        );
 
 
       document
-        .getElementById("proposal")
-        .classList.remove("hidden");
+        .getElementById(
+          "proposal"
+        )
+        .classList.remove(
+          "hidden"
+        );
 
     }
 
 
 
-    /* =========================================
-       SCREEN 2 → SCREEN 3
-    ========================================== */
+    // =====================================================
+    // SCREEN 2 → SCREEN 3
+    // =====================================================
 
     function showFinalProposal() {
 
+      sendResponse(
+        "SURPRISE"
+      );
+
+
       startMusic();
 
 
       document
-        .getElementById("proposal")
-        .classList.add("hidden");
+        .getElementById(
+          "proposal"
+        )
+        .classList.add(
+          "hidden"
+        );
 
 
       document
-        .getElementById("finalProposal")
-        .classList.remove("hidden");
+        .getElementById(
+          "finalProposal"
+        )
+        .classList.remove(
+          "hidden"
+        );
 
     }
 
 
 
-    /* =========================================
-       ESCAPING NO BUTTON
-    ========================================== */
+    // =====================================================
+    // NO BUTTON
+    // =====================================================
 
     const noButton =
-      document.getElementById("noButton");
+      document.getElementById(
+        "noButton"
+      );
 
     const buttonArea =
-      document.getElementById("buttonArea");
+      document.getElementById(
+        "buttonArea"
+      );
+
+
+    let lastNoResponseTime =
+      0;
+
+
+    function recordNoAttempt() {
+
+      const now =
+        Date.now();
+
+
+      /*
+        Prevent too many duplicate
+        records in a very short time.
+      */
+
+      if (
+        now -
+        lastNoResponseTime <
+        1000
+      ) {
+
+        return;
+
+      }
+
+
+      lastNoResponseTime =
+        now;
+
+
+      sendResponse(
+        "NO_ATTEMPT"
+      );
+
+    }
+
 
 
     function moveNoButton() {
@@ -1498,11 +1645,13 @@
 
 
       noButton.style.left =
-        randomX + "px";
+        randomX +
+        "px";
 
 
       noButton.style.top =
-        randomY + "px";
+        randomY +
+        "px";
 
 
       noButton.style.transform =
@@ -1511,25 +1660,35 @@
     }
 
 
-    /*
-      Desktop
-    */
+
+    // =====================================================
+    // DESKTOP
+    // =====================================================
 
     noButton.addEventListener(
       "mouseenter",
-      moveNoButton
+      function () {
+
+        recordNoAttempt();
+
+        moveNoButton();
+
+      }
     );
 
 
-    /*
-      Mobile
-    */
+
+    // =====================================================
+    // MOBILE
+    // =====================================================
 
     noButton.addEventListener(
       "touchstart",
       function (event) {
 
         event.preventDefault();
+
+        recordNoAttempt();
 
         moveNoButton();
 
@@ -1540,9 +1699,10 @@
     );
 
 
-    /*
-      Pointer
-    */
+
+    // =====================================================
+    // POINTER
+    // =====================================================
 
     noButton.addEventListener(
       "pointerdown",
@@ -1550,25 +1710,35 @@
 
         event.preventDefault();
 
+        recordNoAttempt();
+
         moveNoButton();
 
       }
     );
 
 
-    /*
-      Keyboard
-    */
+
+    // =====================================================
+    // KEYBOARD
+    // =====================================================
 
     noButton.addEventListener(
       "focus",
-      moveNoButton
+      function () {
+
+        recordNoAttempt();
+
+        moveNoButton();
+
+      }
     );
 
 
-    /*
-      Extra click protection
-    */
+
+    // =====================================================
+    // EXTRA CLICK PROTECTION
+    // =====================================================
 
     noButton.addEventListener(
       "click",
@@ -1578,6 +1748,8 @@
 
         event.stopPropagation();
 
+        recordNoAttempt();
+
         moveNoButton();
 
       }
@@ -1585,85 +1757,19 @@
 
 
 
-    /* =========================================
-       YES BUTTON
-    ========================================== */
+    // =====================================================
+    // YES BUTTON
+    // =====================================================
 
     function sayYes() {
 
       /*
-        Google Apps Script URL
+        Save YES response.
       */
 
-      const GOOGLE_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbyMck1_XTSi303C6c1ehVSiD8X9zRhpYikWRU4ckT52slc0bEZwrLzUCy42md8HsDSYgA/exec";
-
-
-      /*
-        Save response locally.
-      */
-
-      localStorage.setItem(
-        "poojaProposalResponse",
+      sendResponse(
         "YES"
       );
-
-
-      localStorage.setItem(
-        "poojaProposalResponseTime",
-        new Date().toISOString()
-      );
-
-
-      /*
-        Send response to Google Apps Script.
-      */
-
-      const data =
-        new URLSearchParams();
-
-
-      data.append(
-        "response",
-        "YES"
-      );
-
-
-      data.append(
-        "name",
-        "Pooja"
-      );
-
-
-      data.append(
-        "source",
-        "GitHub Pages"
-      );
-
-
-      fetch(
-        GOOGLE_SCRIPT_URL,
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: data
-        }
-      )
-      .then(function () {
-
-        console.log(
-          "Response sent successfully."
-        );
-
-      })
-      .catch(function (error) {
-
-        console.error(
-          "Could not send response:",
-          error
-        );
-
-      });
 
 
       /*
@@ -1678,8 +1784,12 @@
       */
 
       document
-        .getElementById("finalProposal")
-        .classList.add("hidden");
+        .getElementById(
+          "finalProposal"
+        )
+        .classList.add(
+          "hidden"
+        );
 
 
       /*
@@ -1687,8 +1797,12 @@
       */
 
       document
-        .getElementById("success")
-        .classList.remove("hidden");
+        .getElementById(
+          "success"
+        )
+        .classList.remove(
+          "hidden"
+        );
 
 
       /*
@@ -1701,9 +1815,9 @@
 
 
 
-    /* =========================================
-       CONFETTI
-    ========================================== */
+    // =====================================================
+    // CONFETTI
+    // =====================================================
 
     function createCelebration() {
 
@@ -1727,7 +1841,9 @@
       ) {
 
         const item =
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
 
         item.className =
@@ -1747,7 +1863,8 @@
           (
             18 +
             Math.random() * 25
-          ) + "px";
+          ) +
+          "px";
 
 
         document.body.appendChild(
@@ -1780,7 +1897,6 @@
             item.style.opacity =
               "0";
 
-
           },
           50
         );
@@ -1798,6 +1914,7 @@
       }
 
     }
+
 
   </script>
 
